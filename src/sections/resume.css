@@ -1,0 +1,32 @@
+.resume-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.programming-languages-container {
+    height: 100%;
+}
+
+.programming-language-title {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin: 0 10px;
+
+
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.programming-language-icon {
+    height: 25px;
+    /* Make SVGs white */
+    /*filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(107%) contrast(104%);*/
+    margin-right: 15px;
+    margin-left: 15px;
+}
+

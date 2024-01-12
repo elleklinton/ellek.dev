@@ -1,0 +1,44 @@
+.project-container {
+    width: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(var(--background-blur-radius));
+    background-color: var(--blur-background-color-dark);
+    border: 1px solid white;
+    text-align: left;
+    padding: var(--navbar-padding-top-bottom);
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-weight: 500;
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.project-image {
+    display: block;
+    margin: auto;
+    max-height: 50vh;
+}
+
+.project-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.project-title {
+    color: white;
+    cursor: pointer;
+}
+
+.slideshow-container {
+    max-width: 100vw;
+    position: relative;
+    margin: auto;
+}

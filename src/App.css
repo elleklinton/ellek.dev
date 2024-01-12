@@ -1,38 +1,86 @@
+:root {
+    --color-gray: #858585; /* Adjust as needed */
+    --primary-accent-color: #da3316; /* Adjust as needed */
+    --primary-accent-color-weak: #d08275; /* Adjust as needed */
+    --navbar-width: 100%; /* Adjust as needed */
+    --background-blur-radius: 10px;
+    --blur-background-color-light: rgba(255, 255, 255, 0.1);
+    --blur-background-color-dark: rgba(0, 0, 0, 0.1);
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: #00ffb2;
+    height: 100%;
+    width: 100%;
+    /*min-height: 100vh;*/
+    /*min-width: 100vw;*/
+    padding-top: var(--navbar-height);
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #0057ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    scrollbar-width: none;
+}
+
+a:link,
+a:visited {
+    color: var(--primary-accent-color-weak);
+}
+
+h1 {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+h3 {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-wrap: nowrap;
+    width: fit-content;
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
 }

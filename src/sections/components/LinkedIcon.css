@@ -1,0 +1,12 @@
+.project-link-button {
+    height: 25px;
+    color: white;
+}
+
+.project-link-button-image {
+    height: 25px;
+    /* Make SVGs white */
+    /*filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(107%) contrast(104%);*/
+    margin-left: 15px;
+    margin-right: 15px;
+}

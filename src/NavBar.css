@@ -1,0 +1,71 @@
+:root {
+    --navbar-height: 60px; /* Adjust as needed */
+    --navbar-width: 100%; /* Adjust as needed */
+    --navbar-padding-top-bottom: 20px;
+    --navbar-padding-right-left: 50px;
+    transition: --navbar-height 0.3s ease-in-out;
+}
+
+.NavBar {
+    height: auto;
+    width: var(--navbar-width);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--blur-background-color-light);
+    backdrop-filter: blur(var(--background-blur-radius));
+    /*padding: 1em 2em; !* Adjust as needed *!*/
+    box-sizing: border-box;
+    z-index: 100;
+    /*border-bottom: 1px solid black;*/
+}
+
+.navbar-progress-line {
+    position: absolute;
+    margin-top: var(--navbar-height);
+    height: 2px;
+    background-color: var(--primary-accent-color);
+    width: 0;
+    transition: width 0.3s ease-out;
+}
+
+.title {
+    font-size: 3em;
+    padding: var(--navbar-padding-top-bottom) var(--navbar-padding-right-left)
+        var(--navbar-padding-top-bottom) var(--navbar-padding-right-left);
+    color: white;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+.navbar-sections {
+    display: flex;
+}
+
+.navbar-section-title {
+    margin-left: 1em;
+    padding: 0 var(--navbar-padding-right-left) 0
+        var(--navbar-padding-right-left);
+    cursor: pointer;
+    color: white;
+}
+
+.navbar-section-title:hover,
+.title:hover {
+    color: var(--primary-accent-color-weak);
+}
+
+.active {
+    color: var(--primary-accent-color);
+}
+
+.navbar-section-title::before {
+    content: '';
+    display: block;
+    height: calc(var(--navbar-height) * 1); /* Adjust as needed */
+    margin-top: calc(var(--navbar-height) * -1); /* Adjust as needed */
+    visibility: hidden;
+    pointer-events: none;
+}

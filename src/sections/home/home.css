@@ -1,0 +1,7 @@
+.home {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    height: 100vh;
+}

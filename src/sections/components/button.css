@@ -1,0 +1,26 @@
+.button {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    /*margin: 1.5rem 0 0 0;*/
+    letter-spacing: 0.25rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 32px;
+    backdrop-filter: blur(var(--background-blur-radius));
+}
+
+.button:hover,
+button.active:hover,
+input[type='button']:focus {
+    border-color: var(--primary-accent-color-weak);
+    color: var(--primary-accent-color-weak);
+    /*background-color: transparent;*/
+    outline: 0;
+}
