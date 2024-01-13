@@ -1,0 +1,33 @@
+.sticky-social-container-outer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: var(--navbar-height); /* Added to stretch from top to bottom */
+    bottom: 0; /* Added to stretch from top to bottom */
+    align-items: center;
+    z-index: 100;
+    transition: margin 700ms;
+}
+
+.sticky-social-container {
+    display: flex; /* Ensures flex properties work correctly */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0; /* Added to center vertically within the outer container */
+    border-radius: 10px 0 0 10px;
+    border-color: white;
+    border-style: solid;
+    border-right: 0;
+    backdrop-filter: blur(var(--background-blur-radius));
+    background-color: var(--blur-background-color-light);
+}
+
+.sticky-social-button:hover {
+    border: 0;
+    border-radius: 5px;
+    height: 27px;
+    width: 27px;
+    background-color: var(--blur-background-color-light);
+}

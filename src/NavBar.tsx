@@ -31,6 +31,16 @@ function getOffsetTop(element: Element | null) {
     return offsetTop
 }
 
+function getOffsetBottom(element: Element | null) {
+    let offsetBottom = (element as HTMLElement).offsetHeight
+    while (element) {
+        offsetBottom += (element as HTMLElement).offsetTop
+
+        element = (element as HTMLElement).offsetParent
+    }
+    return offsetBottom
+}
+
 function getOffsetRight(element: Element | null) {
     const offsetRight = 0
     while (element) {
@@ -112,13 +122,11 @@ function calculateProgressPct(sectionName: string): number {
     return sectionStart + sectionPct * sectionRange
 }
 
-const onScroll = (
-    navbarRef: React.MutableRefObject<HTMLDivElement | null>,
-    setActiveSection: (a: string) => void
-) => {
+function getActiveSection(): string {
     let active = 'home'
     sections.forEach((sectionId) => {
         const section = document.getElementById(sectionId)
+        console.log(sectionId, getOffsetTop(section), getOffsetBottom(section))
         if (
             section &&
             window.scrollY >= getOffsetTop(section) - getNavBarHeight()
@@ -126,21 +134,37 @@ const onScroll = (
             active = sectionId
         }
     })
+    return active
+}
+
+function updateUrl(activeSection: string) {
+    const url = new URL(window.location.href)
+    url.searchParams.set('section', activeSection)
+    window.history.pushState({}, '', url.toString())
+}
+
+const onScroll = (
+    navbarRef: React.MutableRefObject<HTMLDivElement | null>,
+    setActiveSection: (a: string) => void
+) => {
+    const active = getActiveSection()
 
     setActiveSection(active)
     if (navbarRef.current)
         setNavBarHeight(`${navbarRef.current.clientHeight}px`, active)
 
-    // const totalScrollHeight = document.body.scrollHeight - window.innerHeight;
-    // const scrollPosition = window.scrollY;
-    // const scrollPercentage = (scrollPosition / totalScrollHeight) * 100;
     const navbarLine = document.getElementById('navbar-line')
     const pctComplete = calculateProgressPct(active).toFixed(2)
     if (navbarLine) navbarLine.style.width = `${pctComplete}%`
 }
 
-const NavBar = () => {
-    const [activeSection, setActiveSection] = useState('home')
+function NavBar({
+    activeSection,
+    setActiveSection,
+}: {
+    activeSection: string
+    setActiveSection: (a: string) => void
+}) {
     const navbarRef = React.createRef<HTMLDivElement>()
 
     // Set scroll listener

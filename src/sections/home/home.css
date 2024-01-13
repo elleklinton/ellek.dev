@@ -5,3 +5,11 @@
     display: grid;
     height: 100vh;
 }
+
+.sticky-social-button-horizontal {
+    display: contents;
+    padding: 0;
+    top: 0;
+    height: 25px;
+    width: 25px;
+}

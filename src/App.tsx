@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import NavBar from './NavBar'
@@ -11,8 +11,11 @@ import Home from './sections/home/Home'
 import Background from './sections/components/Background'
 import lava from './images/lava/lava_1_vertical.jpg'
 import Footer from './sections/Footer'
+import StickySocialVertical from './sections/components/StickySocial'
 
 function App() {
+    const [activeSection, setActiveSection] = useState('home')
+
     return (
         <div>
             <Background
@@ -25,7 +28,11 @@ function App() {
                 }}
             />
             <div className="App">
-                <NavBar />
+                <NavBar
+                    activeSection={activeSection}
+                    setActiveSection={setActiveSection}
+                />
+                <StickySocialVertical activeSection={activeSection} />
                 <Home />
                 <About />
                 <Projects />

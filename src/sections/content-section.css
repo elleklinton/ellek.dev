@@ -13,14 +13,6 @@
     /*margin-top: 20px;*/
 }
 
-.top-padding {
-    padding-top: 50px;
-}
-
-.bottom-padding {
-    padding-bottom: 50px;
-}
-
 .content-container {
     max-width: 70vw;
     margin: 0 auto;
@@ -41,14 +33,22 @@
     /*border: 1px solid white;*/
 }
 
-.hero-image {
-    max-height: 50vh;
-}
-
 .line {
     width: 100vw;
     height: 1px;
     background-color: white;
+}
+
+.top-padding {
+    padding-top: 50px;
+}
+
+.bottom-padding {
+    padding-bottom: 50px;
+}
+
+.hero-image {
+    max-height: 50vh;
 }
 
 .section-title {
@@ -59,3 +59,4 @@
     margin: 0;
     cursor: pointer;
 }
+
