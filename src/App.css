@@ -44,6 +44,10 @@
     color: #61dafb;
 }
 
+.no-cursor-pointer {
+    cursor: default;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

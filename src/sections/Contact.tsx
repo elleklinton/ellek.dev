@@ -35,7 +35,7 @@ function ContactMethod({
 function Contact() {
     return (
         <ContentSection id={'contact'} title={'Contact'}>
-            <p>
+            <div>
                 <ContactMethod
                     title={'Email'}
                     value={'ellek@ellek.dev'}
@@ -49,7 +49,7 @@ function Contact() {
                     href={'tel:8019990602'}
                     className={'top-padding'}
                 />
-            </p>
+            </div>
         </ContentSection>
     )
 }

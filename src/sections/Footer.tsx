@@ -7,7 +7,7 @@ function Footer() {
         <div className="content-section" id="about">
             <div className="content-container">
                 <div className="line" />
-                <SectionTitle sectionName="footer">
+                <SectionTitle sectionName="footer" style={{ cursor: 'unset' }}>
                     <div className="top-padding">
                         <p>
                             Thanks for checking out my website!
@@ -18,9 +18,9 @@ function Footer() {
                             <br />
                             <br />
                             <br />
-                            <p style={{ fontStyle: 'italic' }}>
+                            <a style={{ fontStyle: 'italic' }}>
                                 © Copyright Ellek Linton 2024
-                            </p>
+                            </a>
                             <br />
                             <br />
                         </p>

@@ -5,7 +5,7 @@ import instagram from '../../images/icons/logos/instagram.svg'
 
 import './sticky-social.css'
 import LinkedIcon from './LinkedIcon'
-import { CSSProperties, useRef } from 'react'
+import { CSSProperties, useEffect, useRef, useState } from 'react'
 
 function StickySocialIcon({
     img,
@@ -34,8 +34,15 @@ function StickySocialIcon({
 
 function StickySocialVertical({ activeSection }: { activeSection: string }) {
     const ref = useRef<HTMLDivElement>(null)
-    const selfWidth = ref.current?.getBoundingClientRect().width
-    const isHidden = selfWidth && activeSection === 'home'
+    let [isHidden, setIsHidden] = useState<boolean>(true)
+    const selfWidth = ref.current?.getBoundingClientRect().width ?? 100
+
+    useEffect(() => {
+        if (ref.current) {
+            setIsHidden(!!(selfWidth && activeSection === 'home'))
+        }
+    }, [activeSection, ref.current])
+
     const marginRight = isHidden ? selfWidth * -1 : 0
 
     return (
