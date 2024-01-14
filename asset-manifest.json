@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.6d901dc4.css",
-    "main.js": "/static/js/main.950b2bd5.js",
+    "main.js": "/static/js/main.be528855.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
-    "static/media/lava_1_vertical.jpg": "/static/media/lava_1_vertical.ffa4566c9aa916f1a7a7.jpg",
+    "static/media/lava_4_vertical.jpg": "/static/media/lava_4_vertical.398efc8a02642f613443.jpg",
     "static/media/poker.gif": "/static/media/poker.d2b94a976f1a825a1a7e.gif",
     "static/media/iphone2.png": "/static/media/iphone2.ce54109e557f4c0a8abe.png",
     "static/media/iphone4.png": "/static/media/iphone4.4798b746d38e3a3e1efa.png",
@@ -25,11 +25,11 @@
     "static/media/email.svg": "/static/media/email.105be31b07da6b9eafb609fba8cef307.svg",
     "index.html": "/index.html",
     "main.6d901dc4.css.map": "/static/css/main.6d901dc4.css.map",
-    "main.950b2bd5.js.map": "/static/js/main.950b2bd5.js.map",
+    "main.be528855.js.map": "/static/js/main.be528855.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d901dc4.css",
-    "static/js/main.950b2bd5.js"
+    "static/js/main.be528855.js"
   ]
 }
