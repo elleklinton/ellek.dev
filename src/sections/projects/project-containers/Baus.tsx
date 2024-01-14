@@ -24,10 +24,10 @@ function Baus() {
     const [currImage, setCurrImage] = React.useState(0)
 
     return (
-        <div className="project-container">
+        <div className="project-container" id="baus">
             <h2
                 className="project-title"
-                onClick={() => scrollToProject('pied-poker')}
+                onClick={() => scrollToProject('baus')}
             >
                 Baus Playlist Maker
             </h2>

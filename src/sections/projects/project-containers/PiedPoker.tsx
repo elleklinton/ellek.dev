@@ -35,7 +35,7 @@ function PiedPoker() {
             <p>
                 Enter the world of "Pied Poker," a sophisticated poker
                 probability engine I meticulously crafted from scratch. Driven
-                by the powerful Monte-Carlo simulations, it's not just another
+                by the powerful Monte-Carlo simulation, it's not just another
                 poker calculator — it's a game-changer. The tool delves deep,
                 calculating probabilities that would traditionally be
                 computationally intensive or downright impossible to derive in
@@ -55,9 +55,9 @@ function PiedPoker() {
                 </a>
                 . Now, not only can I boast about its prowess, but developers
                 and poker enthusiasts worldwide can seamlessly integrate and
-                benefit from it. With hundreds of downloads each month, this
-                project stands as a testament to the blend of my love for data,
-                coding, and the intricate game of poker.
+                benefit from it. With over 20,000 installs, this project stands
+                as a testament to the blend of my love for data, coding, and the
+                intricate game of poker.
                 <br />
                 <br />
                 <br />

@@ -23,6 +23,18 @@ function Footer() {
                             </a>
                             <br />
                             <br />
+                            <br />
+                            <a style={{ fontStyle: 'italic' }}>
+                                Background Image:{' '}
+                                <a
+                                    href="https://www.adidizdarevic.com/project/ominous-anxious"
+                                    target={'_blank'}
+                                >
+                                    Adi Dizdarevic
+                                </a>
+                            </a>
+                            <br />
+                            <br />
                         </p>
                     </div>
                 </SectionTitle>

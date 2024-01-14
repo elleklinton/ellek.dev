@@ -26,10 +26,10 @@ function Authentic8r() {
     const [currImage, setCurrImage] = React.useState(0)
 
     return (
-        <div className="project-container">
+        <div className="project-container" id="authentic8r">
             <h2
                 className="project-title"
-                onClick={() => scrollToProject('pied-poker')}
+                onClick={() => scrollToProject('authentic8r')}
             >
                 Authentic8r Counterfeit Sneaker Detection
             </h2>
