@@ -7,7 +7,7 @@
     --blur-background-color-light: rgba(255, 255, 255, 0.1);
     --blur-background-color-dark: rgba(0, 0, 0, 0.1);
     --blur-background-color-dark-medium: rgba(0, 0, 0, 0.2);
-    --blur-background-color-dark-severe: rgba(0, 0, 0, 0.5);
+    --blur-background-color-dark-severe: rgba(0, 0, 0, 0.3);
 }
 
 .App {
