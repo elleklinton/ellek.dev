@@ -8,7 +8,9 @@ function About() {
         <ContentSection id="about" title="About Me">
             <img src={me_img} className="hero-image" alt="Ellek Linton" />
             <p>
+                <br />
                 Hey there! 👋
+                <br />
                 <br />
                 I'm Ellek, and I've graduated from UC Berkeley, armed with a
                 Data Science degree and a{' '}

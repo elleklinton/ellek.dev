@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="content-section" id="about">
             <div className="content-container">
-                <div className="line" />
+                <div className={'line'} />
                 <SectionTitle sectionName="footer" style={{ cursor: 'unset' }}>
                     <div className="top-padding">
                         <p>

@@ -3,7 +3,7 @@ import './home.css'
 import '../content-section.css'
 import Button from '../components/Button'
 import { getNavBarHeight, scrollToSection } from '../../NavBar'
-import StickySocialHorizontal from '../components/SocialIcons'
+import SocialIconsRow from '../components/SocialIconsRow'
 
 const Home = () => {
     return (
@@ -12,10 +12,18 @@ const Home = () => {
             <div className="content-container">
                 <h1>Hi, I'm Ellek Linton! 👋</h1>
                 {/*<h3>Creating Innovative Products with Passion & Precision</h3>*/}
-                <h3 style={{ marginTop: 0, paddingBottom: 20 }}>
-                    Software Engineer @ PayPal, Data Science @ UC Berkeley
+                <h3
+                    style={{
+                        marginTop: 0,
+                        paddingBottom: 20,
+                        whiteSpace: 'nowrap',
+                    }}
+                >
+                    Software Engineer @ PayPal
+                    <br />
+                    Data Science @ UC Berkeley
                 </h3>
-                <StickySocialHorizontal />
+                <SocialIconsRow />
                 <Button
                     style={{
                         margin: 32,

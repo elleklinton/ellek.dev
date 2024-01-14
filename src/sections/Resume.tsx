@@ -9,6 +9,8 @@ import swift_img from '../images/icons/logos/swift.svg'
 import graphql_img from '../images/icons/logos/graphql.svg'
 import SectionTitle from './components/SectionTitle'
 import { ContentSection } from './ContentSection'
+import { scrollToSection } from '../NavBar'
+import Button from './components/Button'
 
 function ProgrammingLanguage({
     name,
@@ -41,10 +43,22 @@ function Resume() {
             <div className="resume-container">
                 <embed
                     src="resume.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0"
-                    width="850"
-                    height="1125"
+                    // width="850"
+                    // height="1125"
                     type="application/pdf"
+                    className={'responsive-pdf'}
                 />
+                <Button
+                    style={{
+                        margin: '32px auto auto auto',
+                        // marginTop: '4rem'
+                    }}
+                    onClick={() => {
+                        window.open('resume.pdf', '_blank')
+                    }}
+                >
+                    Download As PDF
+                </Button>
                 {/*<div className="programming-languages-container">*/}
                 {/*    <ProgrammingLanguage*/}
                 {/*        name={'Python'}*/}

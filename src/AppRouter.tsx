@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import Background from './sections/components/Background'
-import lava from './images/lava/lava_1.jpg'
 import './AppRouter.css'
 import Button from './sections/components/Button'
 
@@ -13,7 +12,6 @@ function RedirectComponent({ to }: { to: string }) {
     return (
         <div>
             <Background
-                image={lava}
                 overlayOpacity={0.6}
                 style={{
                     marginTop: 'calc(var(--navbar-height) * -1)',
@@ -35,7 +33,6 @@ function NotFound() {
     return (
         <div>
             <Background
-                image={lava}
                 overlayOpacity={0.6}
                 style={{
                     marginTop: 'calc(var(--navbar-height) * -1)',
@@ -113,6 +110,12 @@ function AppRouter({ children }: { children: any }) {
                     element={
                         <RedirectComponent to="https://apps.apple.com/us/app/authentic8r-by-altro-ai/id1397219993" />
                     }
+                />
+
+                {/* Resume */}
+                <Route
+                    path="/resources/resume.pdf"
+                    element={<RedirectComponent to="/resume.pdf" />}
                 />
             </Routes>
         </BrowserRouter>

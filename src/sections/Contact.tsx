@@ -2,7 +2,9 @@ import React from 'react'
 import './content-section.css'
 import './contact.css'
 import email_img from '../images/icons/white/email.svg'
+import phone_img from '../images/icons/white/phone.svg'
 import { ContentSection } from './ContentSection'
+import SocialIconsRow from './components/SocialIconsRow'
 
 function ContactMethod({
     title,
@@ -45,11 +47,12 @@ function Contact() {
                 <ContactMethod
                     title={'Phone'}
                     value={'(801) 999-0602'}
-                    logo={email_img}
+                    logo={phone_img}
                     href={'tel:8019990602'}
                     className={'top-padding'}
                 />
             </div>
+            <SocialIconsRow className={'top-padding'} />
         </ContentSection>
     )
 }

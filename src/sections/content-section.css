@@ -43,8 +43,16 @@
     padding-top: 50px;
 }
 
+.right-padding {
+    padding-right: 50px;
+}
+
 .bottom-padding {
     padding-bottom: 50px;
+}
+
+.left-padding {
+    padding-left: 50px;
 }
 
 .hero-image {
@@ -58,5 +66,5 @@
     background-color: var(--blur-background-color-dark);
     margin: 0;
     cursor: pointer;
+    font-size: 35px;
 }
-

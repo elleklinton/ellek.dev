@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import './NavBar.css'
+import { isMobile } from './utils'
+import NavBarSectionsMobile from './NavBarSectionsMobile'
+import { NavBarSections } from './NavBarSections'
+import { HamburgerMenu } from './HamburgerMenu'
+import { currentScrollProgress } from './sections/components/Background'
 
-const sections = ['home', 'about', 'projects', 'resume', 'contact']
+const NAVBAR_SECTIONS = ['home', 'about', 'projects', 'resume', 'contact']
 
 function getNavBarHeight() {
     return parseInt(
@@ -9,6 +14,13 @@ function getNavBarHeight() {
             '--navbar-height'
         ) ?? 0
     )
+}
+
+function currentScrollPosition() {
+    if (window.scrollY < window.innerHeight / 2) {
+        return window.scrollY * 2
+    }
+    return window.scrollY - getNavBarHeight() + window.innerHeight / 2
 }
 
 function getNavBarLeftPadding(): number {
@@ -76,18 +88,19 @@ function percentageXBinForSection(sectionName: string): {
 } {
     const sectionStarts = []
     let i = 0
-    while (i < sections.length) {
-        const sectionName = sections[i]
+    while (i < NAVBAR_SECTIONS.length) {
+        const sectionName = NAVBAR_SECTIONS[i]
         const sectionButtonName = sectionName + '-nav-button'
         const sectionButton = document.getElementById(sectionButtonName)
         const sectionBounds = sectionButton!.getBoundingClientRect()
-        const padding = sectionName === sections[0] ? 0 : getNavBarLeftPadding()
+        const padding =
+            sectionName === NAVBAR_SECTIONS[0] ? 0 : getNavBarLeftPadding()
         sectionStarts.push((sectionBounds.x + padding) / window.innerWidth)
         i++
     }
 
-    const indexOfSection = sections.indexOf(sectionName)
-    if (indexOfSection === sections.length - 1) {
+    const indexOfSection = NAVBAR_SECTIONS.indexOf(sectionName)
+    if (indexOfSection === NAVBAR_SECTIONS.length - 1) {
         return { start: 100 * sectionStarts[indexOfSection], end: 120 }
     }
     return {
@@ -99,11 +112,11 @@ function percentageXBinForSection(sectionName: string): {
 function calculatePercentageWithinSection(sectionName: string) {
     let previousSectionHeights = 0
     let i = 0
-    while (i < sections.length) {
-        const section = document.getElementById(sections[i])
+    while (i < NAVBAR_SECTIONS.length) {
+        const section = document.getElementById(NAVBAR_SECTIONS[i])
         const currSectionHeight = section!.getBoundingClientRect().height
-        if (sections[i] === sectionName) {
-            const currentScroll = window.scrollY
+        if (NAVBAR_SECTIONS[i] === sectionName) {
+            const currentScroll = currentScrollPosition()
             const start = previousSectionHeights
             const end = previousSectionHeights + currSectionHeight
             return (currentScroll - start) / (end - start)
@@ -115,6 +128,9 @@ function calculatePercentageWithinSection(sectionName: string) {
 }
 
 function calculateProgressPct(sectionName: string): number {
+    if (isMobile()) {
+        return currentScrollProgress() * 100
+    }
     const { start: sectionStart, end: sectionEnd } =
         percentageXBinForSection(sectionName)
     const sectionPct = calculatePercentageWithinSection(sectionName)
@@ -124,12 +140,11 @@ function calculateProgressPct(sectionName: string): number {
 
 function getActiveSection(): string {
     let active = 'home'
-    sections.forEach((sectionId) => {
+    NAVBAR_SECTIONS.forEach((sectionId) => {
         const section = document.getElementById(sectionId)
-        console.log(sectionId, getOffsetTop(section), getOffsetBottom(section))
         if (
             section &&
-            window.scrollY >= getOffsetTop(section) - getNavBarHeight()
+            currentScrollPosition() >= getOffsetTop(section) - getNavBarHeight()
         ) {
             active = sectionId
         }
@@ -143,7 +158,7 @@ function updateUrl(activeSection: string) {
     window.history.pushState({}, '', url.toString())
 }
 
-const onScroll = (
+const onNavbarScroll = (
     navbarRef: React.MutableRefObject<HTMLDivElement | null>,
     setActiveSection: (a: string) => void
 ) => {
@@ -166,15 +181,20 @@ function NavBar({
     setActiveSection: (a: string) => void
 }) {
     const navbarRef = React.createRef<HTMLDivElement>()
+    const [isHamburgerActive, setIsHamburgerActive] = useState(false)
+
+    const toggleIcon = () => {
+        setIsHamburgerActive(!isHamburgerActive)
+    }
 
     // Set scroll listener
     useEffect(() => {
         window.addEventListener('scroll', () =>
-            onScroll(navbarRef, setActiveSection)
+            onNavbarScroll(navbarRef, setActiveSection)
         )
         return () => {
             window.removeEventListener('scroll', () =>
-                onScroll(navbarRef, setActiveSection)
+                onNavbarScroll(navbarRef, setActiveSection)
             )
         }
     }, [])
@@ -189,35 +209,66 @@ function NavBar({
         }
     }, [navbarRef.current, navbarRef.current?.clientHeight])
 
+    let style: CSSProperties = {
+        flexDirection: isMobile() ? 'column' : 'row',
+    }
+
+    if (
+        activeSection === 'resume' &&
+        calculatePercentageWithinSection('resume') >= 0
+    )
+        style.backgroundColor = 'var(--blur-background-color-dark-severe)'
+
+    const isProgressLineVisible = !isMobile() || !isHamburgerActive
+
     return (
-        <div className="NavBar" ref={navbarRef}>
+        <div className="NavBar" ref={navbarRef} style={style}>
             <div
-                id={'home-nav-button'}
-                className={`title ${activeSection === 'home' ? 'active' : ''}`}
-                onClick={() => scrollToSection('home')}
+                className="navbar-content"
+                style={{ width: isMobile() ? '100%' : undefined }}
             >
-                Ellek Linton
+                <div
+                    id={'home-nav-button'}
+                    className={`title ${
+                        activeSection === 'home' ? 'active' : ''
+                    }`}
+                    onClick={() => scrollToSection('home')}
+                    style={{ fontSize: 40 }}
+                >
+                    Ellek Linton
+                </div>
+                {isMobile() && (
+                    <HamburgerMenu
+                        toggleIcon={toggleIcon}
+                        isActive={isHamburgerActive}
+                    />
+                )}
             </div>
-            <div className="navbar-sections">
-                {sections
-                    .filter((section) => section !== 'home')
-                    .map((section) => (
-                        <div
-                            key={section}
-                            id={section + '-nav-button'}
-                            className={`navbar-section-title ${
-                                activeSection === section ? 'active' : ''
-                            }`}
-                            onClick={() => scrollToSection(section)}
-                        >
-                            {section.charAt(0).toUpperCase() + section.slice(1)}
-                        </div>
-                    ))}
-            </div>
-            <div className="navbar-progress-line" id="navbar-line" />
+
+            <NavBarSections
+                activeSection={activeSection}
+                hamburgerVisible={isHamburgerActive}
+                setHamburgerVisible={setIsHamburgerActive}
+            />
+
+            {isProgressLineVisible && (
+                <div
+                    className="navbar-progress-line"
+                    id="navbar-line"
+                    // style={{ marginTop: getNavBarHeight() }}
+                />
+            )}
         </div>
     )
 }
 
 export default NavBar
-export { scrollToSection, scrollToProject, getNavBarHeight }
+export {
+    scrollToSection,
+    scrollToProject,
+    getNavBarHeight,
+    setNavBarHeight,
+    onNavbarScroll,
+    calculatePercentageWithinSection,
+    NAVBAR_SECTIONS,
+}

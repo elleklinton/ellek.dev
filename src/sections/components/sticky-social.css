@@ -15,13 +15,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto 0; /* Added to center vertically within the outer container */
+    /* Added to center vertically within the outer container */
     border-radius: 10px 0 0 10px;
     border-color: white;
     border-style: solid;
     border-right: 0;
     backdrop-filter: blur(var(--background-blur-radius));
     background-color: var(--blur-background-color-light);
+    margin: auto 0 var(--navbar-padding-top-bottom);
 }
 
 .sticky-social-button:hover {

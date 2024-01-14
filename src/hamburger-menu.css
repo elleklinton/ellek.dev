@@ -1,0 +1,60 @@
+.hamburger-icon {
+    cursor: pointer;
+    width: 30px; /* Width of the icon */
+    height: 25px; /* Total height of the icon */
+    position: relative;
+    /*right: 20px; !* Added margin to the right *!*/
+    /*top: 20px; !* Added margin to the top *!*/
+}
+
+.hamburger-icon span {
+    height: 3px; /* Height of each line */
+    width: 100%; /* Full width of the container */
+    background-color: white; /* Color of the lines */
+    display: block;
+    position: absolute;
+    transition: transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms ease; /* Smooth transition for transform and opacity */
+    left: 0;
+}
+
+/* Positioning the lines */
+.hamburger-icon span:nth-child(1) {
+    top: 0; /* Top line */
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 50%; /* Middle line */
+    transform: translateY(-50%); /* Centering the middle line */
+}
+
+.hamburger-icon span:nth-child(3) {
+    bottom: 0; /* Bottom line */
+}
+
+/* Active state - transforming into 'X' */
+.hamburger-icon.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* Move top line to center and rotate */
+}
+
+.hamburger-icon.active span:nth-child(2) {
+    opacity: 0; /* Middle line fades away */
+}
+
+.hamburger-icon.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* Move bottom line to center and rotate */
+}
+
+.navbar-sections-mobile {
+    /*position: fixed;*/
+    display: block;
+    top: var(--navbar-height);
+    right: 0;
+    /*left: 0;*/
+    height: fit-content;
+    width: 100vw;
+    flex-direction: column;
+    z-index: 101;
+    background-color: var(--blur-background-color-dark);
+    backdrop-filter: blur(60px);
+    /*background-color: black;*/
+}

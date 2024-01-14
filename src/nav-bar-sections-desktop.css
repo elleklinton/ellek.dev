@@ -1,0 +1,29 @@
+.navbar-sections {
+    display: flex;
+    transition: max-height 700ms ease-out;
+}
+
+.navbar-section-title {
+    margin-left: 1em;
+    padding: var(--navbar-padding-top-bottom) var(--navbar-padding-right-left) var(--navbar-padding-top-bottom) var(--navbar-padding-right-left);
+    cursor: pointer;
+    color: white;
+}
+
+.navbar-section-title:hover,
+.title:hover {
+    color: var(--primary-accent-color-weak);
+}
+
+.active {
+    color: var(--primary-accent-color);
+}
+
+.navbar-section-title::before {
+    content: '';
+    display: block;
+    height: calc(var(--navbar-height) * 1); /* Adjust as needed */
+    margin-top: calc(var(--navbar-height) * -1); /* Adjust as needed */
+    visibility: hidden;
+    pointer-events: none;
+}

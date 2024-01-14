@@ -9,9 +9,9 @@ import About from './sections/About'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import Home from './sections/home/Home'
 import Background from './sections/components/Background'
-import lava from './images/lava/lava_1_vertical.jpg'
 import Footer from './sections/Footer'
 import StickySocialVertical from './sections/components/StickySocial'
+import { isMobile } from './utils'
 
 function App() {
     const [activeSection, setActiveSection] = useState('home')
@@ -19,7 +19,6 @@ function App() {
     return (
         <div>
             <Background
-                image={lava}
                 overlayOpacity={0.6}
                 style={{
                     marginTop: 'calc(var(--navbar-height) * -1)',
@@ -28,10 +27,17 @@ function App() {
                 }}
             />
             <div className="App">
+                {/*{isMobile() ? (*/}
+                {/*    <NavBarMobile*/}
+                {/*        activeSection={activeSection}*/}
+                {/*        setActiveSection={setActiveSection}*/}
+                {/*    />*/}
+                {/*) : (*/}
                 <NavBar
                     activeSection={activeSection}
                     setActiveSection={setActiveSection}
                 />
+                {/*)}*/}
                 <StickySocialVertical activeSection={activeSection} />
                 <Home />
                 <About />

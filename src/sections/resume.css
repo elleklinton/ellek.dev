@@ -1,6 +1,6 @@
 .resume-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: auto;
     justify-content: center;
     align-items: stretch;
@@ -16,7 +16,6 @@
     padding: 15px;
     margin: 0 10px;
 
-
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
@@ -30,3 +29,11 @@
     margin-left: 15px;
 }
 
+.responsive-pdf {
+    width: 80vw;
+    max-width: 850px;
+    height: calc(min(80vw, 850px) * 1.2941); /* Calculated height based on aspect ratio */
+    max-height: 1125px;
+    display: block; /* To prevent inline default behavior */
+    margin: auto;
+}

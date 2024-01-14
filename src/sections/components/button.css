@@ -24,3 +24,11 @@ input[type='button']:focus {
     /*background-color: transparent;*/
     outline: 0;
 }
+
+.button:active,
+button.active:active {
+    border-color: var(--primary-accent-color);
+    color: var(--primary-accent-color);
+    /*background-color: transparent;*/
+    outline: 0;
+}

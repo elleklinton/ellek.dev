@@ -6,11 +6,13 @@
     --background-blur-radius: 10px;
     --blur-background-color-light: rgba(255, 255, 255, 0.1);
     --blur-background-color-dark: rgba(0, 0, 0, 0.1);
+    --blur-background-color-dark-medium: rgba(0, 0, 0, 0.2);
+    --blur-background-color-dark-severe: rgba(0, 0, 0, 0.5);
 }
 
 .App {
     text-align: center;
-    background-color: #00ffb2;
+    background-color: var(--blur-background-color-dark-severe);
     height: 100%;
     width: 100%;
     /*min-height: 100vh;*/
@@ -69,7 +71,7 @@ a:visited {
 
 h1 {
     font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
-    font-size: 3rem;
+    font-size: 40px;
     font-weight: normal;
     margin: 10px;
     padding-bottom: 20px;
@@ -80,7 +82,7 @@ h3 {
     font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: normal;
-    text-wrap: nowrap;
+    white-space: nowrap;
     width: fit-content;
     margin: 10px;
 }
