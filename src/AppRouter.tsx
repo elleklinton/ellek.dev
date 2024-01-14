@@ -68,25 +68,25 @@ function AppRouter({ children }: { children: any }) {
 
                 {/* Pied Poker */}
                 <Route
-                    path="/pied-poker/notebook"
+                    path="pied-poker/notebook"
                     element={
                         <RedirectComponent to="https://colab.research.google.com/drive/1sLgDZRGmRojkJUEcHwz9o1j9ZN2j4l0p?usp=sharing" />
                     }
                 />
                 <Route
-                    path="/pied-poker/colab-notebook"
+                    path="pied-poker/colab-notebook"
                     element={
                         <RedirectComponent to="https://colab.research.google.com/drive/1sLgDZRGmRojkJUEcHwz9o1j9ZN2j4l0p?usp=sharing" />
                     }
                 />
                 <Route
-                    path="/pied-poker/github"
+                    path="pied-poker/github"
                     element={
                         <RedirectComponent to="https://github.com/elleklinton/PiedPoker" />
                     }
                 />
                 <Route
-                    path="/pied-poker/pypi"
+                    path="pied-poker/pypi"
                     element={
                         <RedirectComponent to="https://pypi.org/project/pied-poker/" />
                     }
@@ -94,11 +94,11 @@ function AppRouter({ children }: { children: any }) {
 
                 {/* Baus */}
                 <Route
-                    path="/baus"
+                    path="baus"
                     element={<RedirectComponent to="https://baus.cc" />}
                 />
                 <Route
-                    path="/baus/app-store"
+                    path="baus/app-store"
                     element={
                         <RedirectComponent to="https://apps.apple.com/us/app/baus-playlist-maker/id1479934963" />
                     }
@@ -106,7 +106,7 @@ function AppRouter({ children }: { children: any }) {
 
                 {/* Authentic8r */}
                 <Route
-                    path="/authentic8r/app-store"
+                    path="authentic8r/app-store"
                     element={
                         <RedirectComponent to="https://apps.apple.com/us/app/authentic8r-by-altro-ai/id1397219993" />
                     }
@@ -114,7 +114,7 @@ function AppRouter({ children }: { children: any }) {
 
                 {/* Resume */}
                 <Route
-                    path="/resources/resume.pdf"
+                    path="resources/resume.pdf"
                     element={<RedirectComponent to="/resume.pdf" />}
                 />
             </Routes>

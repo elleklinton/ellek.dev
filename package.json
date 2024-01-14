@@ -22,7 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "start:dev": "npm run format && react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run build:routes:mkdir && npm run build:routes",
+    "build:routes:mkdir": "mkdir build/pied-poker && mkdir build/baus && mkdir build/authentic8r && mkdir build/authentic8r/app-store && mkdir build/baus/app-store && mkdir build/pied-poker/notebook && mkdir build/pied-poker/colab-notebook && mkdir build/pied-poker/github && mkdir build/pied-poker/pypi",
+    "build:routes": "cp build/index.html build/404.html && cp build/index.html build/pied-poker/notebook && cp build/index.html build/pied-poker/colab-notebook && cp build/index.html build/pied-poker/github && cp build/index.html build/pied-poker/pypi && cp build/index.html build/baus && cp build/index.html build/baus/app-store && cp build/index.html build/authentic8r/app-store",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint-broken": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
