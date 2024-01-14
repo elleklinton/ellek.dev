@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.6d901dc4.css",
+    "main.css": "/static/css/main.90be264d.css",
     "main.js": "/static/js/main.be528855.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
     "static/media/lava_4_vertical.jpg": "/static/media/lava_4_vertical.398efc8a02642f613443.jpg",
@@ -24,12 +24,12 @@
     "static/media/linkedin.svg": "/static/media/linkedin.9d6c57806071247c3fcb086b59fa3daa.svg",
     "static/media/email.svg": "/static/media/email.105be31b07da6b9eafb609fba8cef307.svg",
     "index.html": "/index.html",
-    "main.6d901dc4.css.map": "/static/css/main.6d901dc4.css.map",
+    "main.90be264d.css.map": "/static/css/main.90be264d.css.map",
     "main.be528855.js.map": "/static/js/main.be528855.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d901dc4.css",
+    "static/css/main.90be264d.css",
     "static/js/main.be528855.js"
   ]
 }
