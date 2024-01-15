@@ -42,7 +42,7 @@ function Resume() {
         <ContentSection id={'resume'} title={'Resume'}>
             <div className="resume-container">
                 <embed
-                    src="resume.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0"
+                    src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0"
                     // width="850"
                     // height="1125"
                     type="application/pdf"
