@@ -1,12 +1,10 @@
 import React, { CSSProperties, useEffect, useState } from 'react'
 import './NavBar.css'
 import { isMobile } from './utils'
-import NavBarSectionsMobile from './NavBarSectionsMobile'
-import { NavBarSections } from './NavBarSections'
+import { NavBarSections, sectionToUppercase } from './NavBarSections'
 import { HamburgerMenu } from './HamburgerMenu'
 import { currentScrollProgress } from './sections/components/Background'
-
-const NAVBAR_SECTIONS = ['home', 'about', 'projects', 'resume', 'contact']
+import NAVBAR_SECTIONS, { PROJECT_SECTIONS } from './navbar-sections'
 
 function getNavBarHeight() {
     return parseInt(
@@ -43,40 +41,11 @@ function getOffsetTop(element: Element | null) {
     return offsetTop
 }
 
-function getOffsetBottom(element: Element | null) {
-    let offsetBottom = (element as HTMLElement).offsetHeight
-    while (element) {
-        offsetBottom += (element as HTMLElement).offsetTop
-
-        element = (element as HTMLElement).offsetParent
-    }
-    return offsetBottom
-}
-
-function getOffsetRight(element: Element | null) {
-    const offsetRight = 0
-    while (element) {
-        // offsetRight += (element as HTMLElement).offsetLeft + (element as HTMLElement).offsetWidth;
-        element = (element as HTMLElement).offsetParent
-    }
-    return offsetRight
-}
-
-function scrollToSection(sectionId: string) {
-    const section = document.getElementById(sectionId)
-    if (section) {
+function scrollTo(elementId: string) {
+    const element = document.getElementById(elementId)
+    if (element) {
         window.scrollTo({
-            top: getOffsetTop(section) - getNavBarHeight(),
-            behavior: 'smooth',
-        })
-    }
-}
-
-function scrollToProject(projectId: string) {
-    const project = document.getElementById(projectId)
-    if (project) {
-        window.scrollTo({
-            top: getOffsetTop(project) - getNavBarHeight(),
+            top: getOffsetTop(element) - getNavBarHeight(),
             behavior: 'smooth',
         })
     }
@@ -138,38 +107,85 @@ function calculateProgressPct(sectionName: string): number {
     return sectionStart + sectionPct * sectionRange
 }
 
-function getActiveSection(): string {
-    let active = 'home'
-    NAVBAR_SECTIONS.forEach((sectionId) => {
-        const section = document.getElementById(sectionId)
-        if (
-            section &&
-            currentScrollPosition() >= getOffsetTop(section) - getNavBarHeight()
-        ) {
-            active = sectionId
-        }
-    })
-    return active
+function isElementActive(sectionId: string): boolean | null {
+    const section = document.getElementById(sectionId)
+    return (
+        section &&
+        currentScrollPosition() >= getOffsetTop(section) - getNavBarHeight()
+    )
 }
 
-function updateUrl(activeSection: string) {
-    const url = new URL(window.location.href)
-    url.searchParams.set('section', activeSection)
-    window.history.pushState({}, '', url.toString())
+function getActiveProjectSection(): string | null {
+    let activeSection = null
+    PROJECT_SECTIONS.forEach((sectionId) => {
+        if (isElementActive(sectionId)) {
+            activeSection = sectionId
+        }
+    })
+    return activeSection
+}
+
+function getActiveSection(includeProjectId = false): string {
+    let activeSection = 'home'
+    NAVBAR_SECTIONS.forEach((sectionId) => {
+        if (isElementActive(sectionId)) {
+            activeSection = sectionId
+        }
+    })
+    if (includeProjectId && activeSection === 'projects') {
+        const activeProjectSection = getActiveProjectSection()
+        if (activeProjectSection) {
+            activeSection += '/' + getActiveProjectSection()
+        }
+    }
+    return activeSection
+}
+
+function updateUrlOnScroll() {
+    const activeSection = getActiveSection(true)
+    let targetUrl = '/'
+    if (activeSection !== 'home') {
+        targetUrl = `/${activeSection}`
+    }
+
+    if (window.location.pathname !== targetUrl) {
+        window.history.pushState(
+            null,
+            `Ellek Linton - ${sectionToUppercase(activeSection)}`,
+            targetUrl
+        )
+    }
+}
+
+function updateScrollPositionFromUrlIfNeeded() {
+    const currentScrollSection = getActiveSection(true)
+    const sectionInUrl = window.location.pathname
+
+    if (!sectionInUrl.includes(currentScrollSection)) {
+        if (!sectionInUrl.includes('projects')) {
+            // For non projects, they have no special subdirectory path structure
+            scrollTo(sectionInUrl.slice(1))
+        } else {
+            // For projects, we want to scroll to the project ID which is the last part of the path when splitted by /
+            const projectId = sectionInUrl.split('/').slice(-1)[0]
+            scrollTo(projectId)
+        }
+    }
 }
 
 const onNavbarScroll = (
     navbarRef: React.MutableRefObject<HTMLDivElement | null>,
     setActiveSection: (a: string) => void
 ) => {
-    const active = getActiveSection()
+    const activeSection = getActiveSection()
+    updateUrlOnScroll()
 
-    setActiveSection(active)
+    setActiveSection(activeSection)
     if (navbarRef.current)
-        setNavBarHeight(`${navbarRef.current.clientHeight}px`, active)
+        setNavBarHeight(`${navbarRef.current.clientHeight}px`, activeSection)
 
     const navbarLine = document.getElementById('navbar-line')
-    const pctComplete = calculateProgressPct(active).toFixed(2)
+    const pctComplete = calculateProgressPct(activeSection).toFixed(2)
     if (navbarLine) navbarLine.style.width = `${pctComplete}%`
 }
 
@@ -187,11 +203,15 @@ function NavBar({
         setIsHamburgerActive(!isHamburgerActive)
     }
 
-    // Set scroll listener
     useEffect(() => {
+        // Set scroll listener
         window.addEventListener('scroll', () =>
             onNavbarScroll(navbarRef, setActiveSection)
         )
+
+        // Scroll to current URL if needed
+        updateScrollPositionFromUrlIfNeeded()
+
         return () => {
             window.removeEventListener('scroll', () =>
                 onNavbarScroll(navbarRef, setActiveSection)
@@ -232,7 +252,7 @@ function NavBar({
                     className={`title ${
                         activeSection === 'home' ? 'active' : ''
                     }`}
-                    onClick={() => scrollToSection('home')}
+                    onClick={() => scrollTo('home')}
                     style={{ fontSize: 40 }}
                 >
                     Ellek Linton
@@ -264,11 +284,9 @@ function NavBar({
 
 export default NavBar
 export {
-    scrollToSection,
-    scrollToProject,
+    scrollTo,
     getNavBarHeight,
     setNavBarHeight,
     onNavbarScroll,
     calculatePercentageWithinSection,
-    NAVBAR_SECTIONS,
 }

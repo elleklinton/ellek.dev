@@ -1,8 +1,13 @@
 import React from 'react'
-import { NAVBAR_SECTIONS, scrollToSection } from './NavBar'
+import { scrollTo } from './NavBar'
 import './nav-bar-sections-desktop.css'
 import './hamburger-menu.css'
 import { isMobile } from './utils'
+import NAVBAR_SECTIONS from './navbar-sections'
+
+export function sectionToUppercase(section: string) {
+    return section.charAt(0).toUpperCase() + section.slice(1)
+}
 
 export function NavBarSections({
     activeSection,
@@ -38,10 +43,10 @@ export function NavBarSections({
                             }`}
                             onClick={() => {
                                 setHamburgerVisible(false)
-                                scrollToSection(section)
+                                scrollTo(section)
                             }}
                         >
-                            {section.charAt(0).toUpperCase() + section.slice(1)}
+                            {sectionToUppercase(section)}
                         </div>
                     </div>
                 )

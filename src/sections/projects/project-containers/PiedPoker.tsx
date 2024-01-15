@@ -4,14 +4,14 @@ import colab_svg from '../../../images/icons/color/colab.svg'
 import python_svg from '../../../images/icons/color/python.svg'
 import React from 'react'
 import LinkedIcon from '../../components/LinkedIcon'
-import { scrollToProject } from '../../../NavBar'
+import { scrollTo } from '../../../NavBar'
 
 function PiedPoker() {
     return (
         <div id="pied-poker" className="project-container">
             <h2
                 className="project-title"
-                onClick={() => scrollToProject('pied-poker')}
+                onClick={() => scrollTo('pied-poker')}
             >
                 Pied Poker
             </h2>

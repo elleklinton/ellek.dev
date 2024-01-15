@@ -7,7 +7,7 @@ import React from 'react'
 import './baus.css'
 import LinkedIcon from '../../components/LinkedIcon'
 import { ImageSlideshow } from '../../components/ImageSlideshow'
-import { scrollToProject } from '../../../NavBar'
+import { scrollTo } from '../../../NavBar'
 
 const authentic8rOrderedImaged = [
     authentic8r_1,
@@ -29,7 +29,7 @@ function Authentic8r() {
         <div className="project-container" id="authentic8r">
             <h2
                 className="project-title"
-                onClick={() => scrollToProject('authentic8r')}
+                onClick={() => scrollTo('authentic8r')}
             >
                 Authentic8r Counterfeit Sneaker Detection
             </h2>

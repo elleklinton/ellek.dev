@@ -9,7 +9,7 @@ import swift_img from '../images/icons/logos/swift.svg'
 import graphql_img from '../images/icons/logos/graphql.svg'
 import SectionTitle from './components/SectionTitle'
 import { ContentSection } from './ContentSection'
-import { scrollToSection } from '../NavBar'
+import { scrollTo } from '../NavBar'
 import Button from './components/Button'
 
 function ProgrammingLanguage({

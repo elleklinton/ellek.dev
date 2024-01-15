@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './hamburger-menu.css'
-import { NAVBAR_SECTIONS, scrollToSection } from './NavBar'
+import { scrollTo } from './NavBar'
 import SectionTitle from './sections/components/SectionTitle'
+import NAVBAR_SECTIONS from './navbar-sections'
 
 function NavBarSectionsMobile({ activeSection }: { activeSection: string }) {
     const [isActive, setIsActive] = useState(false)
@@ -30,7 +31,7 @@ function NavBarSectionsMobile({ activeSection }: { activeSection: string }) {
                             className={`navbar-section-title ${
                                 activeSection === section ? 'active' : ''
                             }`}
-                            onClick={() => scrollToSection(section)}
+                            onClick={() => scrollTo(section)}
                         >
                             {section.charAt(0).toUpperCase() + section.slice(1)}
                         </div>

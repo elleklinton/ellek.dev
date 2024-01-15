@@ -3,7 +3,9 @@ import React, { useEffect } from 'react'
 import Background from './sections/components/Background'
 import './AppRouter.css'
 import Button from './sections/components/Button'
-import ROUTES from './routes'
+import REDIRECT_ROUTES from './redirect-routes'
+
+import NAVBAR_SECTIONS, { PROJECT_SECTIONS } from './navbar-sections'
 
 function RedirectComponent({ to }: { to: string }) {
     useEffect(() => {
@@ -69,7 +71,26 @@ function AppRouter({ children }: { children: any }) {
                 <Route path="/" element={children} />
                 <Route path="*" element={<NotFound />} />
 
-                {Object.entries(ROUTES).map(([path, to]) => (
+                {/* Sections */}
+                {NAVBAR_SECTIONS.map((section) => (
+                    <Route
+                        key={section}
+                        path={'/' + section}
+                        element={children}
+                    />
+                ))}
+
+                {/* Projects */}
+                {PROJECT_SECTIONS.map((section) => (
+                    <Route
+                        key={section}
+                        path={'/projects/' + section}
+                        element={children}
+                    />
+                ))}
+
+                {/* Redirects */}
+                {Object.entries(REDIRECT_ROUTES).map(([path, to]) => (
                     <Route
                         key={path}
                         path={path}

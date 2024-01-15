@@ -9,7 +9,7 @@ import React from 'react'
 import './baus.css'
 import LinkedIcon from '../../components/LinkedIcon'
 import { ImageSlideshow } from '../../components/ImageSlideshow'
-import { scrollToProject } from '../../../NavBar'
+import { scrollTo } from '../../../NavBar'
 
 const bausOrderedImages = [baus_1, baus_2, baus_3, baus_4, baus_5]
 const textDescriptions = [
@@ -25,10 +25,7 @@ function Baus() {
 
     return (
         <div className="project-container" id="baus">
-            <h2
-                className="project-title"
-                onClick={() => scrollToProject('baus')}
-            >
+            <h2 className="project-title" onClick={() => scrollTo('baus')}>
                 Baus Playlist Maker
             </h2>
             <div className="project-title-container">

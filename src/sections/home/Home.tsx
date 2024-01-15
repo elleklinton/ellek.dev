@@ -2,7 +2,7 @@ import React from 'react'
 import './home.css'
 import '../content-section.css'
 import Button from '../components/Button'
-import { getNavBarHeight, scrollToSection } from '../../NavBar'
+import { getNavBarHeight, scrollTo } from '../../NavBar'
 import SocialIconsRow from '../components/SocialIconsRow'
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
                         // marginTop: '4rem'
                     }}
                     onClick={() => {
-                        scrollToSection('projects')
+                        scrollTo('projects')
                     }}
                 >
                     See Latest Projects

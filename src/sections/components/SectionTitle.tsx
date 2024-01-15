@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { scrollToSection } from '../../NavBar'
+import { scrollTo } from '../../NavBar'
 
 function SectionTitle({
     sectionName,
@@ -15,7 +15,7 @@ function SectionTitle({
             className="section-title"
             style={style}
             onClick={() => {
-                scrollToSection(sectionName)
+                scrollTo(sectionName)
             }}
         >
             {children}

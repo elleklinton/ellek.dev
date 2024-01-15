@@ -10,7 +10,7 @@ function Footer() {
                 <div className={'line'} />
                 <SectionTitle sectionName="footer" style={{ cursor: 'unset' }}>
                     <div className="top-padding">
-                        <p>
+                        <div>
                             Thanks for checking out my website!
                             <br />
                             <br />
@@ -20,7 +20,7 @@ function Footer() {
                             <br />
                             <br />
                             <a></a>
-                            <a
+                            <div
                                 style={{ fontStyle: 'italic' }}
                                 className={'small-text'}
                             >
@@ -32,10 +32,10 @@ function Footer() {
                                     Adi Dizdarevic
                                 </a>
                                 <br />© Copyright Ellek Linton 2024
-                            </a>
+                            </div>
                             <br />
                             <br />
-                        </p>
+                        </div>
                     </div>
                 </SectionTitle>
             </div>
