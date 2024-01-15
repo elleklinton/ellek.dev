@@ -2,8 +2,8 @@ import { CSSProperties, useEffect, useState } from 'react'
 import { Parallax } from 'react-scroll-parallax'
 import './background.css'
 import { getNavBarHeight } from '../../NavBar'
-// import lava from '../../images/lava/lava_1_vertical.jpg'
-import lava from '../../images/lava/lava_4_vertical.jpg'
+import lava from '../../images/lava/lava_1_vertical.jpg'
+// import lava from '../../images/lava/lava_4_vertical.jpg'
 // import lava from '../../images/lava/lava_9_vertical.jpg'
 // import lava from '../../images/lava/lava_10_vertical.jpg'
 
@@ -33,8 +33,13 @@ function currentScrollProgress() {
 function handleScroll(
     startOffsetY: number,
     endOffsetY: number,
-    setOffsetY: (i: number) => void
+    setOffsetY: (i: number) => void,
+    hasNavBar: boolean
 ) {
+    if (!hasNavBar) {
+        setOffsetY(0)
+        return
+    }
     // For mobile devices that aren't tall enough to support parallax
     if (endOffsetY >= startOffsetY) {
         return
@@ -48,18 +53,24 @@ function handleScroll(
 function Background({
     overlayOpacity = 0.2,
     style = {},
+    hasNavBar = true,
 }: {
     overlayOpacity?: number
     style?: CSSProperties
+    hasNavBar?: boolean
 }) {
-    const [startOffsetY, setStartOffsetY] = useState(88)
+    const [startOffsetY, setStartOffsetY] = useState(hasNavBar ? 88 : 0)
     const [endOffsetY, setEndOffsetY] = useState(88)
     const [offsetY, setOffsetY] = useState(startOffsetY)
 
     // Initialize start and end offsets
     useEffect(() => {
         // Set start offset to navbar height
-        setStartOffsetY(getNavBarHeight())
+        if (hasNavBar) {
+            setStartOffsetY(getNavBarHeight())
+        } else {
+            setStartOffsetY(0)
+        }
 
         // Set image height
         const img = new Image()
@@ -76,7 +87,7 @@ function Background({
     }, [])
 
     const scrollHandler = () =>
-        handleScroll(startOffsetY, endOffsetY, setOffsetY)
+        handleScroll(startOffsetY, endOffsetY, setOffsetY, hasNavBar)
 
     // Initialize scroll listener
     useEffect(() => {

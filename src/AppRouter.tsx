@@ -13,12 +13,13 @@ function RedirectComponent({ to }: { to: string }) {
     return (
         <div>
             <Background
-                overlayOpacity={0.6}
+                overlayOpacity={0.8}
                 style={{
-                    marginTop: 'calc(var(--navbar-height) * -1)',
-                    height: 'calc(100% + var(--navbar-height))',
+                    top: '0',
+                    height: '100%',
                     position: 'fixed',
                 }}
+                hasNavBar={false}
             />
             <div className="not-found-text-container">
                 <h3>Redirecting...</h3>
@@ -34,10 +35,11 @@ function NotFound() {
     return (
         <div>
             <Background
-                overlayOpacity={0.6}
+                overlayOpacity={0.8}
+                hasNavBar={false}
                 style={{
-                    marginTop: 'calc(var(--navbar-height) * -1)',
-                    height: 'calc(100% + var(--navbar-height))',
+                    top: '0',
+                    height: '100%',
                     position: 'fixed',
                 }}
             />

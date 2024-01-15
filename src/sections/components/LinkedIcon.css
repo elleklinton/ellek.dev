@@ -12,7 +12,7 @@
 }
 
 .with-hover-background-color:hover {
-    background-color: var(--blur-background-color-dark-medium);
+    background-color: var(--blur-background-color-dark);
     backdrop-filter: blur(var(--background-blur-radius));
 }
 

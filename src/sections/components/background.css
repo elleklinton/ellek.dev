@@ -18,7 +18,7 @@
     overflow: hidden;
     /*margin-top: calc(var(--navbar-height) * -1);*/
     background-size: cover;
-    background-color: var(--blur-background-color-dark-severe);
+    background-color: var(--blur-background-color-dark);
     z-index: 0;
     grid-column: 1;
     grid-row: 1;

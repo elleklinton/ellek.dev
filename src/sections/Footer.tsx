@@ -1,6 +1,7 @@
 import React from 'react'
 import './content-section.css'
 import SectionTitle from './components/SectionTitle'
+import './footer.css'
 
 function Footer() {
     return (
@@ -18,13 +19,11 @@ function Footer() {
                             <br />
                             <br />
                             <br />
-                            <a style={{ fontStyle: 'italic' }}>
-                                © Copyright Ellek Linton 2024
-                            </a>
-                            <br />
-                            <br />
-                            <br />
-                            <a style={{ fontStyle: 'italic' }}>
+                            <a></a>
+                            <a
+                                style={{ fontStyle: 'italic' }}
+                                className={'small-text'}
+                            >
                                 Background Image:{' '}
                                 <a
                                     href="https://www.adidizdarevic.com/project/ominous-anxious"
@@ -32,6 +31,7 @@ function Footer() {
                                 >
                                     Adi Dizdarevic
                                 </a>
+                                <br />© Copyright Ellek Linton 2024
                             </a>
                             <br />
                             <br />

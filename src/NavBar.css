@@ -20,6 +20,7 @@
     box-sizing: border-box;
     z-index: 100;
     /*border-bottom: 1px solid black;*/
+    transition: background-color 1000ms linear
 }
 
 .navbar-content {

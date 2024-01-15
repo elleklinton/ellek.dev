@@ -5,14 +5,13 @@
     --navbar-width: 100%; /* Adjust as needed */
     --background-blur-radius: 10px;
     --blur-background-color-light: rgba(255, 255, 255, 0.1);
-    --blur-background-color-dark: rgba(0, 0, 0, 0.1);
-    --blur-background-color-dark-medium: rgba(0, 0, 0, 0.2);
-    --blur-background-color-dark-severe: rgba(0, 0, 0, 0.3);
+    --blur-background-color-dark: rgba(255, 255, 255, 0.05); /* Used for most blurs */
+    --blur-background-color-dark-severe: rgba(0, 0, 0, 0.5); /* Used for resume navBar background with white underneath */
 }
 
 .App {
     text-align: center;
-    background-color: var(--blur-background-color-dark-severe);
+    background-color: var(--blur-background-color-dark);
     height: 100%;
     width: 100%;
     /*min-height: 100vh;*/
