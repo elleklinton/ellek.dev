@@ -22,17 +22,15 @@
   "scripts": {
     "start": "react-scripts start",
     "start:dev": "npm run format && react-scripts start",
-    "build": "react-scripts build && npm run build:routes:mkdir && npm run build:routes",
-    "build:routes:mkdir": "mkdir build/pied-poker && mkdir build/baus && mkdir build/authentic8r && mkdir build/authentic8r/app-store && mkdir build/baus/app-store && mkdir build/pied-poker/notebook && mkdir build/pied-poker/colab-notebook && mkdir build/pied-poker/github && mkdir build/pied-poker/pypi",
-    "build:routes": "cp build/index.html build/404.html && cp build/index.html build/pied-poker/notebook && cp build/index.html build/pied-poker/colab-notebook && cp build/index.html build/pied-poker/github && cp build/index.html build/pied-poker/pypi && cp build/index.html build/baus && cp build/index.html build/baus/app-store && cp build/index.html build/authentic8r/app-store",
+    "build": "react-scripts build",
+    "postbuild": "ts-node src/scripts/build-routes.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-broken": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc.json",
     "lint:format": "npm run lint && npm run format",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +57,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^6.1.1",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2"
   }
 }

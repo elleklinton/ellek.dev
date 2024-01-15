@@ -5,7 +5,8 @@
 
 .navbar-section-title {
     margin-left: 1em;
-    padding: var(--navbar-padding-top-bottom) var(--navbar-padding-right-left) var(--navbar-padding-top-bottom) var(--navbar-padding-right-left);
+    padding: var(--navbar-padding-top-bottom) var(--navbar-padding-right-left)
+        var(--navbar-padding-top-bottom) var(--navbar-padding-right-left);
     cursor: pointer;
     color: white;
 }

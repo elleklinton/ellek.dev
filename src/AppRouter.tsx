@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import Background from './sections/components/Background'
 import './AppRouter.css'
 import Button from './sections/components/Button'
+import ROUTES from './routes'
 
 function RedirectComponent({ to }: { to: string }) {
     useEffect(() => {
@@ -66,57 +67,13 @@ function AppRouter({ children }: { children: any }) {
                 <Route path="/" element={children} />
                 <Route path="*" element={<NotFound />} />
 
-                {/* Pied Poker */}
-                <Route
-                    path="pied-poker/notebook"
-                    element={
-                        <RedirectComponent to="https://colab.research.google.com/drive/1sLgDZRGmRojkJUEcHwz9o1j9ZN2j4l0p?usp=sharing" />
-                    }
-                />
-                <Route
-                    path="pied-poker/colab-notebook"
-                    element={
-                        <RedirectComponent to="https://colab.research.google.com/drive/1sLgDZRGmRojkJUEcHwz9o1j9ZN2j4l0p?usp=sharing" />
-                    }
-                />
-                <Route
-                    path="pied-poker/github"
-                    element={
-                        <RedirectComponent to="https://github.com/elleklinton/PiedPoker" />
-                    }
-                />
-                <Route
-                    path="pied-poker/pypi"
-                    element={
-                        <RedirectComponent to="https://pypi.org/project/pied-poker/" />
-                    }
-                />
-
-                {/* Baus */}
-                <Route
-                    path="baus"
-                    element={<RedirectComponent to="https://baus.cc" />}
-                />
-                <Route
-                    path="baus/app-store"
-                    element={
-                        <RedirectComponent to="https://apps.apple.com/us/app/baus-playlist-maker/id1479934963" />
-                    }
-                />
-
-                {/* Authentic8r */}
-                <Route
-                    path="authentic8r/app-store"
-                    element={
-                        <RedirectComponent to="https://apps.apple.com/us/app/authentic8r-by-altro-ai/id1397219993" />
-                    }
-                />
-
-                {/* Resume */}
-                <Route
-                    path="resources/resume.pdf"
-                    element={<RedirectComponent to="/resume.pdf" />}
-                />
+                {Object.entries(ROUTES).map(([path, to]) => (
+                    <Route
+                        key={path}
+                        path={path}
+                        element={<RedirectComponent to={to} />}
+                    />
+                ))}
             </Routes>
         </BrowserRouter>
     )
