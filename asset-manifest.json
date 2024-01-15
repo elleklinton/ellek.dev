@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.90be264d.css",
-    "main.js": "/static/js/main.87a965fc.js",
+    "main.css": "/static/css/main.5a6cda15.css",
+    "main.js": "/static/js/main.cffa593e.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
-    "static/media/lava_4_vertical.jpg": "/static/media/lava_4_vertical.398efc8a02642f613443.jpg",
+    "static/media/lava_1_vertical.jpg": "/static/media/lava_1_vertical.ffa4566c9aa916f1a7a7.jpg",
     "static/media/poker.gif": "/static/media/poker.d2b94a976f1a825a1a7e.gif",
     "static/media/iphone2.png": "/static/media/iphone2.ce54109e557f4c0a8abe.png",
     "static/media/iphone4.png": "/static/media/iphone4.4798b746d38e3a3e1efa.png",
@@ -24,12 +24,12 @@
     "static/media/linkedin.svg": "/static/media/linkedin.9d6c57806071247c3fcb086b59fa3daa.svg",
     "static/media/email.svg": "/static/media/email.105be31b07da6b9eafb609fba8cef307.svg",
     "index.html": "/index.html",
-    "main.90be264d.css.map": "/static/css/main.90be264d.css.map",
-    "main.87a965fc.js.map": "/static/js/main.87a965fc.js.map",
+    "main.5a6cda15.css.map": "/static/css/main.5a6cda15.css.map",
+    "main.cffa593e.js.map": "/static/js/main.cffa593e.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.90be264d.css",
-    "static/js/main.87a965fc.js"
+    "static/css/main.5a6cda15.css",
+    "static/js/main.cffa593e.js"
   ]
 }
