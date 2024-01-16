@@ -9,6 +9,7 @@
     grid-column: 1;
     grid-row: 1;
     position: relative;
+    background-color: var(--blur-background-color-dark);
 }
 
 .background-image {
@@ -17,7 +18,7 @@
     width: 100svw;
     overflow: hidden;
     /*margin-top: calc(var(--navbar-height) * -1);*/
-    background-size: cover;
+    background-size: auto;
     background-color: var(--blur-background-color-dark);
     z-index: 0;
     grid-column: 1;

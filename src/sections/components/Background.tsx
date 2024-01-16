@@ -26,6 +26,10 @@ function windowHeight() {
     return window.innerHeight
 }
 
+function windowWidth() {
+    return window.innerWidth
+}
+
 function currentScrollProgress() {
     return window.scrollY / (totalScrollHeight() - windowHeight())
 }
@@ -50,6 +54,38 @@ function handleScroll(
     setOffsetY(offsetY)
 }
 
+function updateImageOffsets(
+    hasNavBar: boolean,
+    startOffsetY: number,
+    setStartOffsetY: (i: number) => void,
+    setEndOffsetY: (i: number) => void,
+    setBackgroundSize: (i: string) => void
+) {
+    // Set start offset to navbar height
+    if (hasNavBar) {
+        setStartOffsetY(getNavBarHeight())
+    } else {
+        setStartOffsetY(0)
+    }
+
+    // Set image height
+    const img = new Image()
+    img.onload = () => {
+        // Check if window is wider than image
+        if (windowWidth() > img.width) {
+            // Set image to cover screen and compute new endOffsetYs
+            setBackgroundSize('cover')
+            const newImageHeight = window.innerWidth * (img.height / img.width)
+            setEndOffsetY(startOffsetY - (newImageHeight - windowHeight()))
+        } else {
+            setBackgroundSize('auto')
+            // Set end offset to image height
+            setEndOffsetY(startOffsetY - (img.height - windowHeight()))
+        }
+    }
+    img.src = BACKGROUND_IMAGE
+}
+
 function Background({
     overlayOpacity = 0.2,
     style = {},
@@ -59,32 +95,21 @@ function Background({
     style?: CSSProperties
     hasNavBar?: boolean
 }) {
+    const [backgroundSize, setBackgroundSize] = useState('auto')
     const [startOffsetY, setStartOffsetY] = useState(hasNavBar ? 88 : 0)
     const [endOffsetY, setEndOffsetY] = useState(88)
     const [offsetY, setOffsetY] = useState(startOffsetY)
 
     // Initialize start and end offsets
     useEffect(() => {
-        // Set start offset to navbar height
-        if (hasNavBar) {
-            setStartOffsetY(getNavBarHeight())
-        } else {
-            setStartOffsetY(0)
-        }
-
-        // Set image height
-        const img = new Image()
-        img.onload = () => {
-            const displayedImageHeight =
-                window.innerWidth * (img.height / img.width)
-
-            // Set end offset to image height
-            setEndOffsetY(
-                startOffsetY - (displayedImageHeight - windowHeight())
-            )
-        }
-        img.src = BACKGROUND_IMAGE
-    }, [])
+        updateImageOffsets(
+            hasNavBar,
+            startOffsetY,
+            setStartOffsetY,
+            setEndOffsetY,
+            setBackgroundSize
+        )
+    }, [windowHeight()])
 
     const scrollHandler = () =>
         handleScroll(startOffsetY, endOffsetY, setOffsetY, hasNavBar)
@@ -104,7 +129,7 @@ function Background({
                 style={{
                     backgroundImage: `url('${BACKGROUND_IMAGE}')`,
                     backgroundPositionY: `${offsetY}px`,
-                    backgroundSize: 'cover',
+                    backgroundSize: backgroundSize,
                     backgroundRepeat: 'no-repeat',
                 }}
             >
