@@ -15,7 +15,6 @@ function RedirectComponent({ to }: { to: string }) {
     return (
         <div>
             <Background
-                overlayOpacity={0.8}
                 style={{
                     top: '0',
                     height: '100%',
@@ -37,7 +36,6 @@ function NotFound() {
     return (
         <div>
             <Background
-                overlayOpacity={0.8}
                 hasNavBar={false}
                 style={{
                     top: '0',

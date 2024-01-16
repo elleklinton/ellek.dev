@@ -19,7 +19,6 @@ function App() {
     return (
         <div>
             <Background
-                overlayOpacity={0.8}
                 style={{
                     marginTop: 'calc(var(--navbar-height) * -1)',
                     height: 'calc(100% + var(--navbar-height))',
