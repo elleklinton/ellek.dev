@@ -1,9 +1,9 @@
 import React from 'react'
-import './content-section.css'
+import './components/content-section.css'
 import './contact.css'
 import email_img from '../images/icons/white/email.svg'
 import phone_img from '../images/icons/white/phone.svg'
-import { ContentSection } from './ContentSection'
+import { ContentSection } from './components/ContentSection'
 import SocialIconsRow from './components/SocialIconsRow'
 
 function ContactMethod({

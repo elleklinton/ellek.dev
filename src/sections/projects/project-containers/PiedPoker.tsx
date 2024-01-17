@@ -5,33 +5,31 @@ import python_svg from '../../../images/icons/color/python.svg'
 import React from 'react'
 import LinkedIcon from '../../components/LinkedIcon'
 import { scrollTo } from '../../../NavBar'
+import { BaseProject } from '../BaseProject'
 
 function PiedPoker() {
     return (
-        <div id="pied-poker" className="project-container">
-            <h2
-                className="project-title"
-                onClick={() => scrollTo('pied-poker')}
-            >
-                Pied Poker
-            </h2>
-            <div className="project-title-container">
-                <LinkedIcon
-                    image={colab_svg}
-                    link="/pied-poker/colab-notebook"
-                    hoverText="Google Colab Notebook"
-                />
-                <LinkedIcon
-                    image={github_svg}
-                    link="/pied-poker/github"
-                    hoverText="Github"
-                />
-                <LinkedIcon
-                    image={python_svg}
-                    link="/pied-poker/pypi"
-                    hoverText="PyPi Package"
-                />
-            </div>
+        <BaseProject
+            projectId={'pied-poker'}
+            title={'Pied Poker'}
+            icons={[
+                {
+                    image: colab_svg,
+                    link: '/pied-poker/colab-notebook',
+                    hoverText: 'Google Colab Notebook',
+                },
+                {
+                    image: github_svg,
+                    link: '/pied-poker/github',
+                    hoverText: 'Github',
+                },
+                {
+                    image: python_svg,
+                    link: '/pied-poker/pypi',
+                    hoverText: 'PyPi Package',
+                },
+            ]}
+        >
             <p>
                 Enter the world of "Pied Poker," a sophisticated poker
                 probability engine I meticulously crafted from scratch. Driven
@@ -86,7 +84,7 @@ function PiedPoker() {
                 </a>{' '}
                 I created to play around with Pied Poker for yourself!
             </p>
-        </div>
+        </BaseProject>
     )
 }
 

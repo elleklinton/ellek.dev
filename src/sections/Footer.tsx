@@ -1,5 +1,5 @@
 import React from 'react'
-import './content-section.css'
+import './components/content-section.css'
 import SectionTitle from './components/SectionTitle'
 import './footer.css'
 

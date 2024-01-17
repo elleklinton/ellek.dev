@@ -1,7 +1,7 @@
 import React from 'react'
-import './content-section.css'
+import './components/content-section.css'
 import me_img from '../images/me.jpg'
-import { ContentSection } from './ContentSection'
+import { ContentSection } from './components/ContentSection'
 
 function About() {
     return (

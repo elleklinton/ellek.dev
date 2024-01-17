@@ -1,6 +1,6 @@
 import React from 'react'
 import './home.css'
-import '../content-section.css'
+import '../components/content-section.css'
 import Button from '../components/Button'
 import { getNavBarHeight, scrollTo } from '../../NavBar'
 import SocialIconsRow from '../components/SocialIconsRow'

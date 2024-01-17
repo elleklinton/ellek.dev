@@ -8,6 +8,7 @@ import './baus.css'
 import LinkedIcon from '../../components/LinkedIcon'
 import { ImageSlideshow } from '../../components/ImageSlideshow'
 import { scrollTo } from '../../../NavBar'
+import { BaseProject } from '../BaseProject'
 
 const authentic8rOrderedImaged = [
     authentic8r_1,
@@ -26,20 +27,17 @@ function Authentic8r() {
     const [currImage, setCurrImage] = React.useState(0)
 
     return (
-        <div className="project-container" id="authentic8r">
-            <h2
-                className="project-title"
-                onClick={() => scrollTo('authentic8r')}
-            >
-                Authentic8r Counterfeit Sneaker Detection
-            </h2>
-            <div className="project-title-container">
-                <LinkedIcon
-                    image={app_store}
-                    link="/authentic8r/app-store"
-                    hoverText="View on App Store"
-                />
-            </div>
+        <BaseProject
+            projectId={'authentic8r'}
+            title={'Authentic8r Counterfeit Sneaker Detection'}
+            icons={[
+                {
+                    image: app_store,
+                    link: '/authentic8r/app-store',
+                    hoverText: 'View on App Store',
+                },
+            ]}
+        >
             <div>
                 <p>
                     Navigating the bustling world of sneaker culture, I realized
@@ -94,7 +92,7 @@ function Authentic8r() {
                     .
                 </p>
             </div>
-        </div>
+        </BaseProject>
     )
 }
 

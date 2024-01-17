@@ -157,18 +157,29 @@ function updateUrlOnScroll() {
     }
 }
 
+function getCurrentUrlPath(): string {
+    let path = window.location.pathname
+    // Remove beginning and end / if they are present
+    if (path.startsWith('/')) path = path.slice(1)
+    if (path.endsWith('/')) path = path.slice(0, -1)
+    return path
+}
+
 function updateScrollPositionFromUrlIfNeeded() {
     const currentScrollSection = getActiveSection(true)
-    const sectionInUrl = window.location.pathname
+    const sectionInUrl = getCurrentUrlPath()
 
     if (!sectionInUrl.includes(currentScrollSection)) {
-        if (!sectionInUrl.includes('projects')) {
-            // For non projects, they have no special subdirectory path structure
-            scrollTo(sectionInUrl.slice(1))
-        } else {
+        // We need to scroll to the section in the URL
+        if (sectionInUrl.includes('projects') && sectionInUrl.includes('/')) {
             // For projects, we want to scroll to the project ID which is the last part of the path when splitted by /
             const projectId = sectionInUrl.split('/').slice(-1)[0]
             scrollTo(projectId)
+            console.log(`Scrolling to Project '${projectId}'`)
+        } else {
+            // For non projects, they have no special subdirectory path structure
+            scrollTo(sectionInUrl)
+            console.log(`Scrolling to Section '${sectionInUrl}'`)
         }
     }
 }

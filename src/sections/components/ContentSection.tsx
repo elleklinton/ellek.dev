@@ -1,4 +1,4 @@
-import SectionTitle from './components/SectionTitle'
+import SectionTitle from './SectionTitle'
 import React from 'react'
 import './content-section.css'
 
@@ -15,7 +15,9 @@ export function ContentSection({
         <div className="content-section" id={id}>
             <div className="content-container">
                 <div className="line" />
-                <SectionTitle sectionName={id}>{title}</SectionTitle>
+                <SectionTitle sectionName={id} href={`/${id}`}>
+                    {title}
+                </SectionTitle>
                 <div className="line" />
                 <div className="top-padding bottom-padding">{children}</div>
             </div>
