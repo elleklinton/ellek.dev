@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.f51b1dab.css",
-    "main.js": "/static/js/main.830e71e6.js",
+    "main.js": "/static/js/main.7222f4e3.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
     "static/media/lava_1_vertical.jpg": "/static/media/lava_1_vertical.ffa4566c9aa916f1a7a7.jpg",
+    "static/media/me2.png": "/static/media/me2.c9af3d7ee35fe76df653.png",
     "static/media/poker.gif": "/static/media/poker.d2b94a976f1a825a1a7e.gif",
     "static/media/iphone2.png": "/static/media/iphone2.ce54109e557f4c0a8abe.png",
     "static/media/iphone4.png": "/static/media/iphone4.4798b746d38e3a3e1efa.png",
@@ -14,7 +15,6 @@
     "static/media/baus3.png": "/static/media/baus3.a2966b7bf6da2c750d52.png",
     "static/media/baus5.png": "/static/media/baus5.8e152a09b444ba0daf8a.png",
     "static/media/baus1.png": "/static/media/baus1.a9db5d11b784ea800cfa.png",
-    "static/media/me.jpg": "/static/media/me.e376cc380379b095772f.jpg",
     "static/media/github.svg": "/static/media/github.46b3fdf8db49472701eb38a6bb85bcd6.svg",
     "static/media/python.svg": "/static/media/python.4298525c028749eb4fa154f8f5bd1931.svg",
     "static/media/app-store.svg": "/static/media/app-store.a2778729d829a2f2752384f8850f3e3e.svg",
@@ -25,11 +25,11 @@
     "static/media/email.svg": "/static/media/email.105be31b07da6b9eafb609fba8cef307.svg",
     "index.html": "/index.html",
     "main.f51b1dab.css.map": "/static/css/main.f51b1dab.css.map",
-    "main.830e71e6.js.map": "/static/js/main.830e71e6.js.map",
+    "main.7222f4e3.js.map": "/static/js/main.7222f4e3.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f51b1dab.css",
-    "static/js/main.830e71e6.js"
+    "static/js/main.7222f4e3.js"
   ]
 }
