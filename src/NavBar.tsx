@@ -179,7 +179,6 @@ function updateScrollPositionFromUrlIfNeeded() {
         } else {
             // For non projects, they have no special subdirectory path structure
             scrollTo(sectionInUrl)
-            console.log(`Scrolling to Section '${sectionInUrl}'`)
         }
     }
 }

@@ -18,7 +18,7 @@
     overflow-x: visible;
     text-wrap: none;
     color: white;
-    font-weight: normal;
+    font-weight: var(--font-weight-normal);
     padding: 10px;
     cursor: pointer;
 }

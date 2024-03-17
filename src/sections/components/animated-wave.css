@@ -1,0 +1,16 @@
+.wave-emoji {
+    display: inline-block;
+    animation: wave-animation 2s infinite; /* Adjust '2s' to control speed */
+    transform-origin: 70% 70%; /* Adjust to control the pivot point of the wave */
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); } /* Wave range */
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); } /* Return to original position */
+    100% { transform: rotate(0deg); }
+}

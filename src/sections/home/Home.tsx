@@ -4,13 +4,16 @@ import '../components/content-section.css'
 import Button from '../components/Button'
 import { getNavBarHeight, scrollTo } from '../../NavBar'
 import SocialIconsRow from '../components/SocialIconsRow'
+import { AnimatedWave } from '../components/AnimatedWave'
 
 const Home = () => {
     return (
         <div id="home" className="content-section home">
             {/*<Parallax speed={100} translateY={[-100, 100]}>*/}
             <div className="content-container">
-                <h1>Hi, I'm Ellek Linton! 👋</h1>
+                <h1>
+                    Hi, I'm Ellek Linton! <AnimatedWave fontSize={'40px'} />
+                </h1>
                 {/*<h3>Creating Innovative Products with Passion & Precision</h3>*/}
                 <h3
                     style={{

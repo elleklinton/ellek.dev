@@ -1,15 +1,17 @@
 import SectionTitle from './SectionTitle'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import './content-section.css'
 
 export function ContentSection({
     id,
     title,
     children,
+    style,
 }: {
     id: string
     title: any
     children?: any
+    style?: CSSProperties
 }) {
     return (
         <div className="content-section" id={id}>
@@ -19,7 +21,9 @@ export function ContentSection({
                     {title}
                 </SectionTitle>
                 <div className="line" />
-                <div className="top-padding bottom-padding">{children}</div>
+                <div className="top-padding bottom-padding" style={style}>
+                    {children}
+                </div>
             </div>
         </div>
     )

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import './fonts/FuturaLT-Light/style.css'
+import './fonts/FuturaLT-Book/style.css'
+import './fonts/FuturaLT-Bold/style.css'
+import './fonts/FuturaLT-Heavy/style.css'
 import NavBar from './NavBar'
 import Contact from './sections/Contact'
 import Resume from './sections/Resume'
@@ -12,6 +16,7 @@ import Background from './sections/components/Background'
 import Footer from './sections/Footer'
 import StickySocialVertical from './sections/components/StickySocial'
 import { isMobile } from './utils'
+import Experience from './sections/experience/Experience'
 
 function App() {
     const [activeSection, setActiveSection] = useState('home')
@@ -41,6 +46,7 @@ function App() {
                 <Home />
                 <About />
                 <Projects />
+                <Experience />
                 <Resume />
                 <Contact />
                 <Footer />

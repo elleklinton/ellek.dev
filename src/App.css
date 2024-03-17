@@ -1,15 +1,15 @@
 :root {
-    --color-gray: #858585; /* Adjust as needed */
+    --color-gray: #262626;
     --primary-accent-color: #da3316; /* Adjust as needed */
     --primary-accent-color-weak: #d08275; /* Adjust as needed */
     --navbar-width: 100%; /* Adjust as needed */
     --background-blur-radius: 10px;
     --blur-background-color-light: rgba(255, 255, 255, 0.1);
     --blur-background-color-dark: rgba(
-        255,
-        255,
-        255,
-        0.05
+        100,
+        100,
+        100,
+        0.1
     ); /* Used for most blurs */
     --blur-background-color-dark-severe: rgba(
         0,
@@ -17,7 +17,16 @@
         0,
         0.5
     ); /* Used for resume navBar background with white underneath */
+
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-normal: normal;
+    --font-weight-semibold: 700;
+    --font-weight-bold: 900;
+
+    background-color: var(--color-gray);
 }
+
 
 .App {
     text-align: center;
@@ -69,7 +78,9 @@
 }
 
 * {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: MyFont, 'Times New Roman', serif;
+    font-weight: var(--font-weight-normal);
+    /*font-family: Futura, 'Trebuchet MS', Arial, sans-serif;*/
     scrollbar-width: none;
 }
 
@@ -79,18 +90,19 @@ a:visited {
 }
 
 h1 {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: MyFont, 'Times New Roman', serif;
+    /*font-family: Futura, 'Trebuchet MS', Arial, sans-serif;*/
     font-size: 40px;
-    font-weight: normal;
+    font-weight: var(--font-weight-normal);
     margin: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
 
 h3 {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    /*font-family: Futura, 'Trebuchet MS', Arial, sans-serif;*/
     font-size: 1.5rem;
-    font-weight: normal;
+    font-weight: var(--font-weight-normal);
     white-space: nowrap;
     width: fit-content;
     margin: 10px;

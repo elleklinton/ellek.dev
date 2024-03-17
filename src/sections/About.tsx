@@ -2,26 +2,35 @@ import React from 'react'
 import './components/content-section.css'
 import me_img from '../images/me2.png'
 import { ContentSection } from './components/ContentSection'
+import { AnimatedWave } from './components/AnimatedWave'
 
 function About() {
     return (
         <ContentSection id="about" title="About Me">
             <img src={me_img} className="hero-image" alt="Ellek Linton" />
-            <p>
+            <div>
                 <br />
-                Hey there! 👋
+                Hey there! <AnimatedWave fontSize={'20px'} />
                 <br />
                 <br />
-                I'm Ellek, and I've graduated from UC Berkeley, armed with a
-                Data Science degree and a{' '}
-                <a href="https://www.youtube.com/watch?v=ubchplluX9o">
+                I'm Ellek, an (aspiring) professional poker player who loves
+                classic rock, hypoallergenic doggos, David Lynch movies, and
+                software. I graduated in 2020 from UC Berkeley with a Data
+                Science degree and a{' '}
+                <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=HQmmM_qwG4k"
+                >
                     whole lotta love
                 </a>{' '}
-                for coding. At the crossroads of coding and creativity, that's
-                where you'll find me. Whether at PayPal or on a personal
-                project, I aim to create digital magic. Dive in, and let's have
-                some fun!
-            </p>
+                for coding. I currently work on the Apple Pay team at PayPal. At
+                the crossroads of coding and creativity, that's where you'll
+                find me. Whether at PayPal or on a personal project, I aim to
+                create digital magic.
+                <br />
+                <br />
+                Dive in, and let's have some fun!
+            </div>
         </ContentSection>
     )
 }

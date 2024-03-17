@@ -53,7 +53,7 @@ function PiedPoker() {
                 </a>
                 . Now, not only can I boast about its prowess, but developers
                 and poker enthusiasts worldwide can seamlessly integrate and
-                benefit from it. With over 20,000 installs, this project stands
+                benefit from it. With over 21,000 installs, this project stands
                 as a testament to the blend of my love for data, coding, and the
                 intricate game of poker.
                 <br />

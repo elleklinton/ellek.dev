@@ -11,7 +11,7 @@
 }
 
 h2 {
-    font-weight: 500;
+    font-weight: var(--font-weight-semibold);
     margin: 0;
     font-size: 30px;
     text-align: center;

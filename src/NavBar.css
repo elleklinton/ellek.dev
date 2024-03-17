@@ -46,6 +46,6 @@
         var(--navbar-padding-top-bottom) var(--navbar-padding-right-left);
     color: white;
     cursor: pointer;
-    font-weight: lighter;
+    font-weight: var(--font-weight-light);
     white-space: nowrap;
 }

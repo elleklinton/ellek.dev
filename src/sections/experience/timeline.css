@@ -1,0 +1,162 @@
+.vertical-timeline-element-content {
+    color: white;
+    background: var(--blur-background-color-dark);
+    backdrop-filter: blur(var(--background-blur-radius));
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.timeline-element-content {
+    text-align: left;
+}
+
+.timeline-summary {
+    font-size: 1.2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.timeline-element-content-split-pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+    .timeline-element-content-split-pane {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .timeline-element-content-split-pane > * {
+        margin-bottom: 20px;
+    }
+}
+
+.timeline-element-content-split-pane-right {
+    /*flex: 1; !* Each child will take up an equal amount of space *!*/
+    margin-left: 20px; /* Spacing inside each div */
+    padding-left: 20px;
+    border-left: 1px solid white;
+}
+
+.timeline-element-content-split-pane-title {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-semibold);
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.timeline-element-content-award-hover-text {
+    position: absolute;
+    background-color: var(--color-gray);
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 25vw;
+    z-index: 101;
+    padding: 10px;
+    margin-left: 30px;
+    white-space: normal;
+}
+
+.tooltip {
+    position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: var(--color-gray);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 2000;
+
+    top: 100%;
+    left: 50%;
+    width: 25vw;
+    margin-left: calc(-1 * 25vw / 2); /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+@media only screen and (max-width: 600px) {
+    .tooltip .tooltiptext {
+        width: 80vw;
+        margin-left: calc(-1 * 80vw / 2); /* Use half of the width (120/2 = 60), to center the tooltip */
+    }
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+ul {
+    list-style-type: none; /* Removes the default list style */
+    padding: 0; /* Removes the default padding */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li::before {
+    /*content: ''; !* Custom bullet *!*/
+    color: white; /* Bullet color */
+    font-weight: var(--font-weight-normal);
+    display: inline-block; /* Needed to add space between bullet and text */
+    width: 0; /* Space between bullet and text */
+    margin-left: 0; /* Align bullets with the text */
+    /*margin-top: 15px;*/
+    /*margin-bottom: 15px;*/
+}
+
+.timeline-element-date {
+    width: fit-content;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 1170px) {
+    .vertical-timeline--two-columns
+        .vertical-timeline-element-content
+        .vertical-timeline-element-date {
+        position: absolute;
+        left: 124%;
+        top: 6px;
+        width: fit-content;
+        white-space: nowrap;
+        font-size: 1.3rem;
+        color: white;
+        opacity: 100%;
+    }
+}
+
+.info-line-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    .info-line-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.info-line-heavy {
+    font-weight: var(--font-weight-semibold);
+    white-space: nowrap;
+}
+
+.info-line-italic {
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    white-space: nowrap;
+}

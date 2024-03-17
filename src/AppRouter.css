@@ -1,12 +1,12 @@
 h3 {
     color: white;
-    font-weight: 500;
+    font-weight: var(--font-weight-semibold);
     margin: 0;
 }
 
 p {
     color: white;
-    font-weight: normal;
+    font-weight: var(--font-weight-normal);
     margin: 0;
 }
 

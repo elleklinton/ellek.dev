@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MyFont';
+    src:
+        url('FuturaLT-Bold.woff2') format('woff2'),
+        url('FuturaLT-Bold.woff') format('woff'),
+        url('FuturaLT-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
