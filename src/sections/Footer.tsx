@@ -12,10 +12,7 @@ function FooterLink({ text, link, linkText }: TFooterLink) {
     return (
         <div className={'small-text'}>
             {text}:{' '}
-            <a
-                href="https://www.adidizdarevic.com/project/ominous-anxious"
-                target={'_blank'}
-            >
+            <a href={link} target={'_blank'}>
                 {linkText}
             </a>
         </div>
@@ -28,7 +25,11 @@ function Footer() {
         <div className="content-section" id="about">
             <div className="content-container">
                 <div className={'line'} />
-                <SectionTitle sectionName="footer" style={{ cursor: 'unset' }}>
+                <SectionTitle
+                    blockClicks={false}
+                    sectionName="footer"
+                    style={{ cursor: 'unset' }}
+                >
                     <div className="top-padding">
                         <div>
                             Thanks for checking out my website!
@@ -36,8 +37,6 @@ function Footer() {
                             Made with ❤️️ by Ellek Linton
                             <br />
                             <br />
-                            {/*<br />*/}
-                            {/*<br />*/}
                             <a></a>
                             <div
                                 style={{ fontStyle: 'italic' }}

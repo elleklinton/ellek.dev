@@ -8,6 +8,7 @@ import PiedPoker from './project-containers/PiedPoker'
 import Baus from './project-containers/Baus'
 import Authentic8r from './project-containers/Authentic8r'
 import { ContentSection } from '../components/ContentSection'
+import A8PokerSimulator from './project-containers/A8PokerSimulator'
 
 function Projects() {
     return (
@@ -19,8 +20,8 @@ function Projects() {
                 something super cool! Below are some of the creations I'm
                 particularly proud of. Let's take a journey through them.
             </p>
-
             <PiedPoker />
+            <A8PokerSimulator />
             <Baus />
             <Authentic8r />
         </ContentSection>

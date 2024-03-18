@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:dev": "npm run format && react-scripts start",
+    "start:dev": "npm run format && npm run build && react-scripts start",
     "build": "react-scripts build",
     "postbuild": "ts-node src/scripts/build-routes.ts",
     "test": "react-scripts test",

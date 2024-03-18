@@ -6,7 +6,7 @@ const NAVBAR_SECTIONS = [
     'resume',
     'contact',
 ]
-const PROJECT_SECTIONS = ['pied-poker', 'baus', 'authentic8r']
+const PROJECT_SECTIONS = ['a8', 'pied-poker', 'baus', 'authentic8r']
 export default NAVBAR_SECTIONS
 
 export { PROJECT_SECTIONS }

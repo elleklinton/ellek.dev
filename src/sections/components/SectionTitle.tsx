@@ -6,11 +6,13 @@ function SectionTitle({
     children,
     style,
     href,
+    blockClicks = true,
 }: {
     sectionName: string
     children: any
     style?: CSSProperties
     href?: string
+    blockClicks?: boolean
 }) {
     const includeHref = typeof children === 'string'
     return (
@@ -18,8 +20,10 @@ function SectionTitle({
             className="section-title"
             style={style}
             onClick={(e) => {
-                e.preventDefault()
-                scrollTo(sectionName)
+                if (blockClicks) {
+                    e.preventDefault()
+                    scrollTo(sectionName)
+                }
             }}
         >
             {includeHref ? (

@@ -1,4 +1,8 @@
 const REDIRECT_ROUTES: { [key: string]: string } = {
+    // A8 Poker Simulator
+    'a8/app': 'https://a8.ellek.dev',
+    'a8/github': 'https://github.com/elleklinton/a8',
+
     // Pied Poker
     'pied-poker/notebook':
         'https://colab.research.google.com/drive/1sLgDZRGmRojkJUEcHwz9o1j9ZN2j4l0p?usp=sharing',

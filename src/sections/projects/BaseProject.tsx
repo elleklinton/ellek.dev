@@ -6,6 +6,7 @@ import React from 'react'
 type TBaseProject = {
     projectId: string
     title: string
+    subtitle?: string
     icons: {
         image: any
         link: string
@@ -17,6 +18,7 @@ type TBaseProject = {
 export function BaseProject({
     projectId,
     title,
+    subtitle = undefined,
     icons,
     children,
 }: TBaseProject) {
@@ -34,6 +36,11 @@ export function BaseProject({
                     style={{ color: 'white', textDecoration: 'none' }}
                 >
                     {title}
+                    {subtitle && (
+                        <div className={'small-text'}>
+                            <i>{subtitle}</i>
+                        </div>
+                    )}
                 </a>
             </h2>
             <div className="project-title-container">
