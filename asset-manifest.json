@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.68b83d36.css",
-    "main.js": "/static/js/main.6f7ecf96.js",
+    "main.js": "/static/js/main.33d1e1ef.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
     "static/media/lava_1_vertical.jpg": "/static/media/lava_1_vertical.ffa4566c9aa916f1a7a7.jpg",
     "static/media/me2.png": "/static/media/me2.c9af3d7ee35fe76df653.png",
@@ -11,6 +11,7 @@
     "static/media/iphone3.png": "/static/media/iphone3.474384f2cf35c98ede13.png",
     "static/media/iphone1.png": "/static/media/iphone1.83c27df9d6612b044ed5.png",
     "static/media/baus4.png": "/static/media/baus4.0d4c58f7fd47d90d5874.png",
+    "static/media/gameplay.png": "/static/media/gameplay.3a1f71a2af29aabb93b5.png",
     "static/media/baus2.png": "/static/media/baus2.50a56855a55e25202207.png",
     "static/media/baus3.png": "/static/media/baus3.a2966b7bf6da2c750d52.png",
     "static/media/baus5.png": "/static/media/baus5.8e152a09b444ba0daf8a.png",
@@ -49,11 +50,11 @@
     "index.html": "/index.html",
     "static/media/azure.svg": "/static/media/azure.a8cc5b9530de2a2eea6adb4b78fafa7c.svg",
     "main.68b83d36.css.map": "/static/css/main.68b83d36.css.map",
-    "main.6f7ecf96.js.map": "/static/js/main.6f7ecf96.js.map",
+    "main.33d1e1ef.js.map": "/static/js/main.33d1e1ef.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.68b83d36.css",
-    "static/js/main.6f7ecf96.js"
+    "static/js/main.33d1e1ef.js"
   ]
 }
