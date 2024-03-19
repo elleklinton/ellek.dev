@@ -32,7 +32,7 @@ function A8PokerSimulator() {
         <BaseProject
             projectId={'a8'}
             title={'A8 Poker Simulator'}
-            subtitle={'(Work In Progress)'}
+            subtitle={'React Web App (Work In Progress)'}
             icons={[
                 {
                     image: github_svg,

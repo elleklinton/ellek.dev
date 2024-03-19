@@ -28,6 +28,7 @@ function Baus() {
         <BaseProject
             projectId={'baus'}
             title={'Baus Playlist Maker'}
+            subtitle={'iOS App'}
             icons={[
                 {
                     image: app_store,

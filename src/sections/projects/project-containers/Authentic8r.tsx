@@ -30,6 +30,7 @@ function Authentic8r() {
         <BaseProject
             projectId={'authentic8r'}
             title={'Authentic8r Counterfeit Sneaker Detection'}
+            subtitle={'iOS App'}
             icons={[
                 {
                     image: app_store,

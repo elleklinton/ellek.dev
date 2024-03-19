@@ -44,3 +44,23 @@ h2 {
     position: relative;
     margin: auto;
 }
+
+.collapsed {
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    mask-image: linear-gradient(to bottom, transparent, black 50%, transparent);
+}
+
+.transition {
+    transition: max-height 0.5s ease-out;
+}

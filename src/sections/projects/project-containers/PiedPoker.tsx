@@ -12,6 +12,7 @@ function PiedPoker() {
         <BaseProject
             projectId={'pied-poker'}
             title={'Pied Poker'}
+            subtitle={'Python Package'}
             icons={[
                 {
                     image: colab_svg,

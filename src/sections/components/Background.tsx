@@ -87,7 +87,7 @@ function updateImageOffsets(
 }
 
 function Background({
-    overlayOpacity = 0.8,
+    overlayOpacity = 0.7,
     style = {},
     hasNavBar = true,
 }: {

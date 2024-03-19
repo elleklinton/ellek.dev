@@ -2,9 +2,11 @@ import './projects.css'
 import { scrollTo } from '../../NavBar'
 import LinkedIcon from '../components/LinkedIcon'
 import React from 'react'
+import { ExpandProjectButton } from './ExpandProjectButton'
+import { TProjects } from '../../navbar-sections'
 
 type TBaseProject = {
-    projectId: string
+    projectId: TProjects
     title: string
     subtitle?: string
     icons: {
@@ -22,6 +24,8 @@ export function BaseProject({
     icons,
     children,
 }: TBaseProject) {
+    // const [isExpanded, setIsExpanded] = React.useState(false)
+
     return (
         <div className="project-container" id={projectId}>
             <h2
@@ -53,7 +57,15 @@ export function BaseProject({
                     />
                 ))}
             </div>
-            <div>{children}</div>
+            {children}
+            {/*<div className={`${isExpanded ? '' : 'collapsed'} transition`}>*/}
+            {/*    {children}*/}
+            {/*</div>*/}
+            {/*<ExpandProjectButton*/}
+            {/*    projectId={projectId}*/}
+            {/*    isExpanded={isExpanded}*/}
+            {/*    setIsExpanded={setIsExpanded}*/}
+            {/*/>*/}
         </div>
     )
 }
