@@ -37,19 +37,21 @@ function App() {
                 {/*        setActiveSection={setActiveSection}*/}
                 {/*    />*/}
                 {/*) : (*/}
-                <NavBar
-                    activeSection={activeSection}
-                    setActiveSection={setActiveSection}
-                />
-                {/*)}*/}
-                <StickySocialVertical activeSection={activeSection} />
-                <Home />
-                <About />
-                <Projects />
-                <Experience />
-                <Resume />
-                <Contact />
-                <Footer />
+                <main>
+                    <NavBar
+                        activeSection={activeSection}
+                        setActiveSection={setActiveSection}
+                    />
+                    {/*)}*/}
+                    <StickySocialVertical activeSection={activeSection} />
+                    <Home />
+                    <About />
+                    <Projects />
+                    <Experience />
+                    <Resume />
+                    <Contact />
+                    <Footer />
+                </main>
             </div>
         </div>
     )

@@ -24,7 +24,7 @@
     "start": "react-scripts start",
     "start:dev": "npm run format && npm run build && react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "ts-node src/scripts/build-routes.ts",
+    "postbuild": "ts-node src/scripts/post-build-script.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",

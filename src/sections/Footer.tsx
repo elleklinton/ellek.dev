@@ -4,14 +4,14 @@ import SectionTitle from './components/SectionTitle'
 import './footer.css'
 
 type TFooterLink = {
-    text: string
+    text?: string
     link: string
     linkText: string
 }
 function FooterLink({ text, link, linkText }: TFooterLink) {
     return (
         <div className={'small-text'}>
-            {text}:{' '}
+            {text && text + ': '}
             <a href={link} target={'_blank'}>
                 {linkText}
             </a>
@@ -22,7 +22,7 @@ function FooterLink({ text, link, linkText }: TFooterLink) {
 function Footer() {
     const currentYear = new Date().getFullYear().toString()
     return (
-        <div className="content-section" id="about">
+        <footer className="content-section" id="footer">
             <div className="content-container">
                 <div className={'line'} />
                 <SectionTitle
@@ -40,7 +40,7 @@ function Footer() {
                             <a></a>
                             <div
                                 style={{ fontStyle: 'italic' }}
-                                className={'small-text'}
+                                className={'small-text footer-links'}
                             >
                                 <FooterLink
                                     text={'Website Source Code'}
@@ -57,7 +57,11 @@ function Footer() {
                                     linkText={'Adi Dizdarevic'}
                                 />
                                 <br />
+                                <br />
                                 {'© Copyright Ellek Linton ' + currentYear}
+                                <br />
+                                <br />
+                                <a href={'/sitemap.xml'}>Sitemap</a>
                             </div>
                             <br />
                             <br />
@@ -65,7 +69,7 @@ function Footer() {
                     </div>
                 </SectionTitle>
             </div>
-        </div>
+        </footer>
     )
 }
 

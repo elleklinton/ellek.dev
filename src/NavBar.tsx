@@ -252,7 +252,7 @@ function NavBar({
     const isProgressLineVisible = !isMobile() || !isHamburgerActive
 
     return (
-        <div className="NavBar" ref={navbarRef} style={style}>
+        <nav className="NavBar" ref={navbarRef} style={style}>
             <div
                 className="navbar-content"
                 style={{ width: isMobile() ? '100%' : undefined }}
@@ -288,7 +288,7 @@ function NavBar({
                     // style={{ marginTop: getNavBarHeight() }}
                 />
             )}
-        </div>
+        </nav>
     )
 }
 

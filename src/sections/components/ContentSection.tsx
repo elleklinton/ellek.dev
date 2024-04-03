@@ -14,7 +14,7 @@ export function ContentSection({
     style?: CSSProperties
 }) {
     return (
-        <div className="content-section" id={id}>
+        <section className="content-section" id={id}>
             <div className="content-container">
                 <div className="line" />
                 <SectionTitle sectionName={id} href={`/${id}`}>
@@ -25,6 +25,6 @@ export function ContentSection({
                     {children}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

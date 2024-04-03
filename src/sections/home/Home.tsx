@@ -11,21 +11,23 @@ const Home = () => {
         <div id="home" className="content-section home">
             {/*<Parallax speed={100} translateY={[-100, 100]}>*/}
             <div className="content-container">
-                <h1>
-                    Hi, I'm Ellek Linton! <AnimatedWave fontSize={'40px'} />
-                </h1>
-                {/*<h3>Creating Innovative Products with Passion & Precision</h3>*/}
-                <h3
-                    style={{
-                        marginTop: 0,
-                        paddingBottom: 20,
-                        whiteSpace: 'nowrap',
-                    }}
-                >
-                    Software Engineer @ PayPal
-                    <br />
-                    Data Science @ UC Berkeley
-                </h3>
+                <header>
+                    <h1>
+                        Hi, I'm Ellek Linton! <AnimatedWave fontSize={'40px'} />
+                    </h1>
+                    {/*<h3>Creating Innovative Products with Passion & Precision</h3>*/}
+                    <h3
+                        style={{
+                            marginTop: 0,
+                            paddingBottom: 20,
+                            whiteSpace: 'nowrap',
+                        }}
+                    >
+                        Software Engineer @ PayPal
+                        <br />
+                        Data Science @ UC Berkeley
+                    </h3>
+                </header>
                 <SocialIconsRow />
                 <Button
                     style={{

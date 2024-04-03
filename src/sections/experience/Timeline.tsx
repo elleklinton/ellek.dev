@@ -42,7 +42,7 @@ function Timeline() {
     return (
         <VerticalTimeline>
             <TimelineEvent
-                position={'Software Engineer II'}
+                position={'Software Engineer'}
                 positionSubtitle={'Apple Pay'}
                 company={'PayPal'}
                 location={'San Francisco, CA'}
@@ -80,7 +80,7 @@ function Timeline() {
                         />
                         <TimelineEventPaneItem
                             name={'"Bravo" Awards'}
-                            quantity={4}
+                            quantity={5}
                             icon={trophy}
                             hoverText={bravoHoverText}
                         />
@@ -88,7 +88,8 @@ function Timeline() {
                 </TimelineEventPaneContainer>
             </TimelineEvent>
             <TimelineEvent
-                position={'Software Engineer I'}
+                position={'Software Engineer'}
+                positionSubtitle={'Merchant Onboarding'}
                 company={'PayPal'}
                 location={'San Jose, CA'}
                 date={'July 2020 - January 2022'}
@@ -124,7 +125,8 @@ function Timeline() {
                 </TimelineEventPaneContainer>
             </TimelineEvent>
             <TimelineEvent
-                position={'(Freelance Contractor)'}
+                position={'Lead API Engineer'}
+                positionSubtitle={'(Freelance Contractor)'}
                 company={'Edify.ai'}
                 location={'San Francisco, CA'}
                 date={'July 2021'}
