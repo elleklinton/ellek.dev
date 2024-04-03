@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import logo from './logo.svg'
+import React, { useState } from 'react'
+import ReactGA from 'react-ga'
+
 import './App.css'
 import './fonts/FuturaLT-Light/style.css'
 import './fonts/FuturaLT-Book/style.css'
@@ -10,13 +11,19 @@ import Contact from './sections/Contact'
 import Resume from './sections/Resume'
 import Projects from './sections/projects/Projects'
 import About from './sections/About'
-import { ParallaxProvider } from 'react-scroll-parallax'
 import Home from './sections/home/Home'
 import Background from './sections/components/Background'
 import Footer from './sections/Footer'
 import StickySocialVertical from './sections/components/StickySocial'
-import { isMobile } from './utils'
 import Experience from './sections/experience/Experience'
+import { sendAnalyticsEvent } from './analytics'
+
+ReactGA.initialize('G-4PSNG8Y49Z', {
+    gaOptions: {
+        siteSpeedSampleRate: 100,
+        sampleRate: 100,
+    },
+})
 
 function App() {
     const [activeSection, setActiveSection] = useState('home')

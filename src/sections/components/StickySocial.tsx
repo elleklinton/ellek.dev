@@ -31,11 +31,13 @@ function StickySocialVertical({ activeSection }: { activeSection: string }) {
                     img={linkedin}
                     link={'https://linkedin.com/in/ellek'}
                     hoverText={'LinkedIn'}
+                    analyticsSource={'sticky social'}
                 />
                 <SocialIcon
                     img={github}
                     link={'https://github.com/elleklinton'}
                     hoverText={'GitHub'}
+                    analyticsSource={'sticky social'}
                 />
                 {/*<SocialIcon*/}
                 {/*    img={facebook}*/}

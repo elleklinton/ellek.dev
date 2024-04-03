@@ -4,6 +4,7 @@ import LinkedIcon from '../components/LinkedIcon'
 import React from 'react'
 import { ExpandProjectButton } from './ExpandProjectButton'
 import { TProjects } from '../../navbar-sections'
+import { sendAnalyticsEvent } from '../../analytics'
 
 type TBaseProject = {
     projectId: TProjects
@@ -33,6 +34,11 @@ export function BaseProject({
                 onClick={(e) => {
                     e.preventDefault()
                     scrollTo(projectId)
+                    sendAnalyticsEvent({
+                        category: 'Button Click',
+                        action: 'Clicked on Navigation Link',
+                        label: '[project title] ' + projectId,
+                    })
                 }}
             >
                 <a

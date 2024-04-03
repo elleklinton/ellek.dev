@@ -1,5 +1,6 @@
 import './LinkedIcon.css'
 import { CSSProperties, useState } from 'react'
+import { sendAnalyticsEvent } from '../../analytics'
 
 function LinkedIcon({
     image,
@@ -10,6 +11,7 @@ function LinkedIcon({
     hoverBorder = true,
     hoverBackground = true,
     size = 25,
+    analyticsSource,
 }: {
     image: string
     link: string
@@ -19,6 +21,7 @@ function LinkedIcon({
     hoverBorder?: boolean
     hoverBackground?: boolean
     size?: number
+    analyticsSource?: string
 }) {
     const [isHovered, setIsHovered] = useState(false)
     function toggleHover() {
@@ -40,11 +43,16 @@ function LinkedIcon({
             rel="noopener noreferrer"
             title={hoverText}
             href={link}
-            style={{
-                ...style,
-                // height: dim,
-                // width: dim,
+            onClick={(e) => {
+                sendAnalyticsEvent({
+                    category: 'Button Click',
+                    action: 'Clicked on External Link',
+                    label:
+                        (analyticsSource ? `[${analyticsSource}] ` : '') +
+                        hoverText,
+                })
             }}
+            style={style}
         >
             <img src={image} className="link-button-image" />
         </a>

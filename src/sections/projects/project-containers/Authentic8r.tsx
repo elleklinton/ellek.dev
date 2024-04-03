@@ -9,6 +9,7 @@ import LinkedIcon from '../../components/LinkedIcon'
 import { ImageSlideshow } from '../../components/ImageSlideshow'
 import { scrollTo } from '../../../NavBar'
 import { BaseProject } from '../BaseProject'
+import { ExternalLink } from '../../components/ExternalLink'
 
 const authentic8rOrderedImaged = [
     authentic8r_1,
@@ -35,7 +36,7 @@ function Authentic8r() {
                 {
                     image: app_store,
                     link: '/authentic8r/app-store',
-                    hoverText: 'View on App Store',
+                    hoverText: 'Authentic8r App Store',
                 },
             ]}
         >
@@ -83,13 +84,12 @@ function Authentic8r() {
                 <br />
                 <p>
                     Authentic8r is available on the{' '}
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <ExternalLink
+                        analyticsLabel={'[project text] authentic8r app store'}
                         href="/authentic8r/app-store"
                     >
                         iOS App Store
-                    </a>
+                    </ExternalLink>
                     .
                 </p>
             </div>

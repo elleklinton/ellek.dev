@@ -4,6 +4,7 @@ import './nav-bar-sections-desktop.css'
 import './hamburger-menu.css'
 import { isMobile } from './utils'
 import NAVBAR_SECTIONS from './navbar-sections'
+import { sendAnalyticsEvent } from './analytics'
 
 export function sectionToUppercase(section: string) {
     return section.charAt(0).toUpperCase() + section.slice(1)
@@ -44,6 +45,11 @@ export function NavBarSections({
                             onClick={() => {
                                 setHamburgerVisible(false)
                                 scrollTo(section)
+                                sendAnalyticsEvent({
+                                    category: 'Button Click',
+                                    action: 'Clicked on Navigation Link',
+                                    label: '[navbar] ' + section,
+                                })
                             }}
                         >
                             {sectionToUppercase(section)}

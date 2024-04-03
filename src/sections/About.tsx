@@ -3,6 +3,7 @@ import './components/content-section.css'
 import me_img from '../images/me2.png'
 import { ContentSection } from './components/ContentSection'
 import { AnimatedWave } from './components/AnimatedWave'
+import { ExternalLink } from './components/ExternalLink'
 
 function About() {
     return (
@@ -17,12 +18,12 @@ function About() {
                 classic rock, hypoallergenic doggos, David Lynch movies, and
                 software. I graduated in 2020 from UC Berkeley with a Data
                 Science degree and a{' '}
-                <a
-                    target="_blank"
+                <ExternalLink
+                    analyticsLabel={'whole lotta love'}
                     href="https://www.youtube.com/watch?v=HQmmM_qwG4k"
                 >
                     whole lotta love
-                </a>{' '}
+                </ExternalLink>{' '}
                 for coding. I currently work on the Apple Pay team at PayPal. At
                 the crossroads of coding and creativity, that's where you'll
                 find me. Whether at PayPal or on a personal project, I aim to

@@ -11,6 +11,7 @@ import SectionTitle from './components/SectionTitle'
 import { ContentSection } from './components/ContentSection'
 import { scrollTo } from '../NavBar'
 import Button from './components/Button'
+import { sendAnalyticsEvent } from '../analytics'
 
 function ProgrammingLanguage({
     name,
@@ -54,6 +55,11 @@ function Resume() {
                         // marginTop: '4rem'
                     }}
                     onClick={() => {
+                        sendAnalyticsEvent({
+                            category: 'Button Click',
+                            action: 'Downloaded Resume',
+                            label: 'Clicked resume button',
+                        })
                         window.open('resume.pdf', '_blank')
                     }}
                 >

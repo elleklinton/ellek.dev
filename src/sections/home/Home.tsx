@@ -5,6 +5,7 @@ import Button from '../components/Button'
 import { getNavBarHeight, scrollTo } from '../../NavBar'
 import SocialIconsRow from '../components/SocialIconsRow'
 import { AnimatedWave } from '../components/AnimatedWave'
+import { sendAnalyticsEvent } from '../../analytics'
 
 const Home = () => {
     return (
@@ -28,7 +29,7 @@ const Home = () => {
                         Data Science @ UC Berkeley
                     </h3>
                 </header>
-                <SocialIconsRow />
+                <SocialIconsRow analyticsSource={'home'} />
                 <Button
                     style={{
                         margin: 32,
@@ -36,6 +37,11 @@ const Home = () => {
                     }}
                     onClick={() => {
                         scrollTo('projects')
+                        sendAnalyticsEvent({
+                            category: 'Button Click',
+                            action: 'Clicked on Navigation Link',
+                            label: '[home button] projects',
+                        })
                     }}
                 >
                     See Latest Projects

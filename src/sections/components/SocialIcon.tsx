@@ -9,6 +9,7 @@ function SocialIcon({
     size = 25,
     hoverBorder = false,
     hoverBackground = true,
+    analyticsSource,
 }: {
     img: any
     link: string
@@ -17,6 +18,7 @@ function SocialIcon({
     hoverBorder?: boolean
     hoverBackground?: boolean
     size?: number
+    analyticsSource: string
 }) {
     // + 2 to account for hover border so it doesn't change layout when you hover.
     const iconStyle: CSSProperties = {
@@ -34,6 +36,7 @@ function SocialIcon({
             size={size}
             hoverBorder={hoverBorder}
             hoverBackground={hoverBackground}
+            analyticsSource={analyticsSource}
         />
     )
 }

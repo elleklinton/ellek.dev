@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import { scrollTo } from '../../NavBar'
+import { sendAnalyticsEvent } from '../../analytics'
 
 function SectionTitle({
     sectionName,
@@ -23,6 +24,11 @@ function SectionTitle({
                 if (blockClicks) {
                     e.preventDefault()
                     scrollTo(sectionName)
+                    sendAnalyticsEvent({
+                        category: 'Button Click',
+                        action: 'Clicked on Navigation Link',
+                        label: '[section title] ' + sectionName,
+                    })
                 }
             }}
         >

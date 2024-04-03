@@ -2,9 +2,10 @@ import React from 'react'
 import './components/content-section.css'
 import SectionTitle from './components/SectionTitle'
 import './footer.css'
+import { ExternalLink } from './components/ExternalLink'
 
 type TFooterLink = {
-    text?: string
+    text: string
     link: string
     linkText: string
 }
@@ -12,9 +13,9 @@ function FooterLink({ text, link, linkText }: TFooterLink) {
     return (
         <div className={'small-text'}>
             {text && text + ': '}
-            <a href={link} target={'_blank'}>
+            <ExternalLink href={link} analyticsLabel={'[footer] ' + text}>
                 {linkText}
-            </a>
+            </ExternalLink>
         </div>
     )
 }
@@ -61,7 +62,12 @@ function Footer() {
                                 {'© Copyright Ellek Linton ' + currentYear}
                                 <br />
                                 <br />
-                                <a href={'/sitemap.xml'}>Sitemap</a>
+                                <ExternalLink
+                                    analyticsLabel={'sitemap'}
+                                    href={'/sitemap.xml'}
+                                >
+                                    Sitemap
+                                </ExternalLink>
                             </div>
                             <br />
                             <br />

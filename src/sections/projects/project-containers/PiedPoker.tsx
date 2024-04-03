@@ -6,6 +6,7 @@ import React from 'react'
 import LinkedIcon from '../../components/LinkedIcon'
 import { scrollTo } from '../../../NavBar'
 import { BaseProject } from '../BaseProject'
+import { ExternalLink } from '../../components/ExternalLink'
 
 function PiedPoker() {
     return (
@@ -17,17 +18,17 @@ function PiedPoker() {
                 {
                     image: colab_svg,
                     link: '/pied-poker/colab-notebook',
-                    hoverText: 'Google Colab Notebook',
+                    hoverText: 'Pied Poker Google Colab Notebook',
                 },
                 {
                     image: github_svg,
                     link: '/pied-poker/github',
-                    hoverText: 'Github',
+                    hoverText: 'Pied Poker Github',
                 },
                 {
                     image: python_svg,
                     link: '/pied-poker/pypi',
-                    hoverText: 'PyPi Package',
+                    hoverText: 'Pied Poker PyPi Package',
                 },
             ]}
         >
@@ -45,13 +46,12 @@ function PiedPoker() {
                 performance, "Pied Poker" delivers these statistics at lightning
                 speed, all within seconds. Beyond its capabilities, I took it a
                 step further by launching the engine as a{' '}
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <ExternalLink
+                    analyticsLabel={'[project text] pied-poker pypi package'}
                     href="/pied-poker/pypi"
                 >
                     Python package on PyPI
-                </a>
+                </ExternalLink>
                 . Now, not only can I boast about its prowess, but developers
                 and poker enthusiasts worldwide can seamlessly integrate and
                 benefit from it. With over 21,000 installs, this project stands
@@ -68,21 +68,19 @@ function PiedPoker() {
                 <br />
                 <br />
                 Check out the{' '}
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <ExternalLink
+                    analyticsLabel={'[project text] pied-poker github'}
                     href="/pied-poker/github"
                 >
                     GitHub
-                </a>{' '}
+                </ExternalLink>{' '}
                 and{' '}
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <ExternalLink
+                    analyticsLabel={'[project text] pied-poker colab notebook'}
                     href="/pied-poker/colab-notebook"
                 >
                     Google Colab notebook
-                </a>{' '}
+                </ExternalLink>{' '}
                 I created to play around with Pied Poker for yourself!
             </p>
         </BaseProject>

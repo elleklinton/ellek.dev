@@ -5,6 +5,8 @@ import a8_gameplay_png from '../../../images/a8/gameplay.png'
 import React from 'react'
 import { BaseProject } from '../BaseProject'
 import { scrollTo } from '../../../NavBar'
+import { ExternalLink } from '../../components/ExternalLink'
+import { sendAnalyticsEvent } from '../../../analytics'
 
 type TFutureIdeaListItem = {
     title: string
@@ -37,12 +39,12 @@ function A8PokerSimulator() {
                 {
                     image: github_svg,
                     link: '/a8/github',
-                    hoverText: 'Github',
+                    hoverText: 'A8 Github',
                 },
                 {
                     image: external_link_svh,
                     link: '/a8/app',
-                    hoverText: 'Open App',
+                    hoverText: 'A8 App Website',
                 },
             ]}
         >
@@ -50,12 +52,12 @@ function A8PokerSimulator() {
                 Welcome to the cutting-edge realm of the A8 Poker Simulator,
                 where the stakes are high, and the competition is fueled by AI.
                 Named after my favorite poker hand, Ace-8 (a.k.a. "
-                <a
-                    target="_blank"
+                <ExternalLink
+                    analyticsLabel="Dead Man's Hand"
                     href="https://en.wikipedia.org/wiki/Dead_man%27s_hand"
                 >
                     Dead Man's Hand
-                </a>
+                </ExternalLink>
                 "), this simulator offers a unique blend of strategy,
                 psychology, and technology, immersing you in a poker experience
                 like no other. Although still a basic work-in-progress, I have
@@ -120,6 +122,11 @@ function A8PokerSimulator() {
                             onClick={(e) => {
                                 e.preventDefault()
                                 scrollTo('pied-poker')
+                                sendAnalyticsEvent({
+                                    category: 'Button Click',
+                                    action: 'Clicked on Navigation Link',
+                                    label: '[project text] a8 pied-poker cross-link',
+                                })
                             }}
                         >
                             Pied Poker
@@ -150,13 +157,19 @@ function A8PokerSimulator() {
                 A8 is very much still a work-in-progress, but I'm excited to
                 continue developing it to create a powerful poker simulator.
                 Check out the{' '}
-                <a target="_blank" rel="noopener noreferrer" href="/a8/app">
+                <ExternalLink
+                    analyticsLabel={'[project text] a8 website'}
+                    href="/a8/app"
+                >
                     App Website
-                </a>{' '}
+                </ExternalLink>{' '}
                 and{' '}
-                <a target="_blank" rel="noopener noreferrer" href="/a8/github">
+                <ExternalLink
+                    analyticsLabel={'[project text] a8 github'}
+                    href="/a8/github"
+                >
                     GitHub source code
-                </a>{' '}
+                </ExternalLink>{' '}
                 to play around for yourself!
                 <br />
                 <br />

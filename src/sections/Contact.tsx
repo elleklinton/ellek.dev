@@ -5,6 +5,7 @@ import email_img from '../images/icons/white/email.svg'
 import phone_img from '../images/icons/white/phone.svg'
 import { ContentSection } from './components/ContentSection'
 import SocialIconsRow from './components/SocialIconsRow'
+import { ExternalLink } from './components/ExternalLink'
 
 function ContactMethod({
     title,
@@ -27,9 +28,14 @@ function ContactMethod({
         >
             <img src={logo} className="contact-method-logo" />
             <p className="contact-title">{title}</p>
-            <a href={href} className="contact-value">
+            <ExternalLink
+                analyticsAction={'Clicked on Contact Link'}
+                analyticsLabel={title}
+                href={href}
+                className="contact-value"
+            >
                 {value}
-            </a>
+            </ExternalLink>
         </div>
     )
 }
@@ -52,7 +58,10 @@ function Contact() {
                     className={'top-padding'}
                 />
             </div>
-            <SocialIconsRow className={'top-padding'} />
+            <SocialIconsRow
+                analyticsSource={'contact'}
+                className={'top-padding'}
+            />
         </ContentSection>
     )
 }

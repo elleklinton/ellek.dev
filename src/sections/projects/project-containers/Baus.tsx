@@ -11,6 +11,7 @@ import LinkedIcon from '../../components/LinkedIcon'
 import { ImageSlideshow } from '../../components/ImageSlideshow'
 import { scrollTo } from '../../../NavBar'
 import { BaseProject } from '../BaseProject'
+import { ExternalLink } from '../../components/ExternalLink'
 
 const bausOrderedImages = [baus_1, baus_2, baus_3, baus_4, baus_5]
 const textDescriptions = [
@@ -33,7 +34,7 @@ function Baus() {
                 {
                     image: app_store,
                     link: '/baus/app-store',
-                    hoverText: 'View on App Store',
+                    hoverText: 'Baus App Store',
                 },
                 {
                     image: external_link,
@@ -63,13 +64,12 @@ function Baus() {
                     <br />
                     <br />
                     The app, now available on the{' '}
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <ExternalLink
+                        analyticsLabel={'[project text] baus app store'}
                         href="/baus/app-store"
                     >
                         iOS App Store
-                    </a>
+                    </ExternalLink>
                     , seamlessly integrates with Spotify API, ensuring users are
                     just a tap away from their next favorite playlist. With a
                     database enriched with over 800,000 songs, each featuring
@@ -89,9 +89,12 @@ function Baus() {
                 <br />
                 <p>
                     You can view more details about Baus Playlist Maker on the{' '}
-                    <a target="_blank" rel="noopener noreferrer" href="/baus">
+                    <ExternalLink
+                        analyticsLabel={'[project text] baus website'}
+                        href="/baus"
+                    >
                         project website
-                    </a>
+                    </ExternalLink>
                     .
                 </p>
             </div>

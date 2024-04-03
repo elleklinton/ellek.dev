@@ -3,7 +3,13 @@ import github from '../../images/icons/white/github.svg'
 import './social-icons-row.css'
 import LinkedIcon from './LinkedIcon'
 
-function SocialIconsRow({ className }: { className?: string }) {
+function SocialIconsRow({
+    analyticsSource,
+    className,
+}: {
+    analyticsSource: string
+    className?: string
+}) {
     // const size = 30
     return (
         <div
@@ -15,6 +21,7 @@ function SocialIconsRow({ className }: { className?: string }) {
                 hoverText={'LinkedIn'}
                 className={'right-padding left-padding'}
                 hoverBorder={true}
+                analyticsSource={analyticsSource + ' social icons row'}
                 // size={size}
             />
             <LinkedIcon
@@ -23,6 +30,7 @@ function SocialIconsRow({ className }: { className?: string }) {
                 hoverText={'GitHub'}
                 className={'social-icons-container'}
                 hoverBorder={true}
+                analyticsSource={analyticsSource + ' social icons row'}
                 // size={size}
             />
             {/*<SocialIcon*/}

@@ -5,6 +5,8 @@ import { NavBarSections, sectionToUppercase } from './NavBarSections'
 import { HamburgerMenu } from './HamburgerMenu'
 import { currentScrollProgress } from './sections/components/Background'
 import NAVBAR_SECTIONS, { PROJECT_SECTIONS } from './navbar-sections'
+import ReactGA from 'react-ga'
+import { sendAnalyticsEvent, sendAnalyticsPageView } from './analytics'
 
 function getNavBarHeight() {
     return parseInt(
@@ -149,11 +151,29 @@ function updateUrlOnScroll() {
     }
 
     if (window.location.pathname !== targetUrl) {
+        const oldPathname = window.location.pathname
+
         window.history.pushState(
             null,
             `Ellek Linton - ${sectionToUppercase(activeSection)}`,
             targetUrl
         )
+
+        if (
+            oldPathname.includes('experience') &&
+            targetUrl.includes('projects')
+        ) {
+            // Handle reverse scroll of projects differently to capture section scroll
+            sendAnalyticsPageView('projects', false, '/projects')
+        }
+
+        if (activeSection.includes('projects/')) {
+            const projectId = activeSection.split('/').slice(-1)[0]
+            sendAnalyticsPageView(projectId, true)
+        } else {
+            ReactGA.pageview(window.location.pathname + window.location.search)
+            sendAnalyticsPageView(activeSection, false)
+        }
     }
 }
 
@@ -214,6 +234,8 @@ function NavBar({
     }
 
     useEffect(() => {
+        sendAnalyticsPageView(activeSection, false)
+
         // Set scroll listener
         window.addEventListener('scroll', () =>
             onNavbarScroll(navbarRef, setActiveSection)
