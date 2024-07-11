@@ -24,7 +24,7 @@ const Home = () => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Software Engineer @ PayPal
+                        Software Engineer
                         <br />
                         Data Science @ UC Berkeley
                     </h3>
