@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4eb1b99f.css",
-    "main.js": "/static/js/main.73c7bbd0.js",
+    "main.css": "/static/css/main.83ce95f3.css",
+    "main.js": "/static/js/main.5b4f9b66.js",
     "static/js/787.62034596.chunk.js": "/static/js/787.62034596.chunk.js",
     "static/media/lava_1_vertical.jpg": "/static/media/lava_1_vertical.ffa4566c9aa916f1a7a7.jpg",
     "static/media/me2.png": "/static/media/me2.c9af3d7ee35fe76df653.png",
@@ -30,6 +30,8 @@
     "static/media/FuturaLT-Book.woff2": "/static/media/FuturaLT-Book.166578c69c08e94d4a6a.woff2",
     "static/media/FuturaLT-Heavy.woff2": "/static/media/FuturaLT-Heavy.b60d3a00b53e4c843a63.woff2",
     "static/media/react.svg": "/static/media/react.598d90dd4f36234e376cbc6ccd571550.svg",
+    "static/media/kubernetes.svg": "/static/media/kubernetes.df01a9b77e4b6f3ce169ab475a3b8f64.svg",
+    "static/media/snap.svg": "/static/media/snap.1b526e0b37ffcffd25a1a8fd1a672bb3.svg",
     "static/media/paypal.svg": "/static/media/paypal.1bb8d5977252ddaff885d64b83632aaf.svg",
     "static/media/aws.svg": "/static/media/aws.e0e8fd617b46de380866cc8c7fceb440.svg",
     "static/media/nodejs.svg": "/static/media/nodejs.e7e718538ada32a8dc2b61340a397034.svg",
@@ -49,12 +51,12 @@
     "index.html": "/index.html",
     "static/media/email.svg": "/static/media/email.105be31b07da6b9eafb609fba8cef307.svg",
     "static/media/azure.svg": "/static/media/azure.a8cc5b9530de2a2eea6adb4b78fafa7c.svg",
-    "main.4eb1b99f.css.map": "/static/css/main.4eb1b99f.css.map",
-    "main.73c7bbd0.js.map": "/static/js/main.73c7bbd0.js.map",
+    "main.83ce95f3.css.map": "/static/css/main.83ce95f3.css.map",
+    "main.5b4f9b66.js.map": "/static/js/main.5b4f9b66.js.map",
     "787.62034596.chunk.js.map": "/static/js/787.62034596.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4eb1b99f.css",
-    "static/js/main.73c7bbd0.js"
+    "static/css/main.83ce95f3.css",
+    "static/js/main.5b4f9b66.js"
   ]
 }
