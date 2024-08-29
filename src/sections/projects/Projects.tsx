@@ -13,7 +13,7 @@ import A8PokerSimulator from './project-containers/A8PokerSimulator'
 function Projects() {
     return (
         <ContentSection id={'projects'} title={'Projects'}>
-            <p className="bottom-padding">
+            <p className="bottom-padding left-text">
                 In between professional commitments and the craziness of life, I
                 love diving deep into personal projects. They’re my playground –
                 spaces where I experiment, innovate, and get to just create

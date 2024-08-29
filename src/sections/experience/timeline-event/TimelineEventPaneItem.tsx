@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 
 export type TTimelineEventPaneItem = {
     name: string
-    icon: string
+    icon: string | any
     hoverText?: string | undefined
     quantity?: number | undefined
 }

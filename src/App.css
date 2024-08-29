@@ -114,3 +114,15 @@ p {
 div {
     font-size: 20px;
 }
+
+.left-text {
+    display: block;
+    text-align: left;
+    justify-content: left;
+}
+
+.center-text {
+    display: block;
+    text-align: center;
+    justify-content: center;
+}

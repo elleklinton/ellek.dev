@@ -11,26 +11,38 @@ function About() {
             <img src={me_img} className="hero-image" alt="Ellek Linton" />
             <div>
                 <br />
-                Hey there! <AnimatedWave fontSize={'20px'} />
-                <br />
-                <br />
-                I'm Ellek, an (aspiring) professional poker player who loves
-                classic rock, hypoallergenic doggos, David Lynch movies, and
-                software. I graduated in 2020 from UC Berkeley with a Data
-                Science degree and a{' '}
-                <ExternalLink
-                    analyticsLabel={'whole lotta love'}
-                    href="https://www.youtube.com/watch?v=HQmmM_qwG4k"
+                <h3
+                    style={{
+                        width: '100%',
+                    }}
                 >
-                    whole lotta love
-                </ExternalLink>{' '}
-                for coding. I currently work on the Apple Pay team at PayPal. At
-                the crossroads of coding and creativity, that's where you'll
-                find me. Whether at PayPal or on a personal project, I aim to
-                create digital magic.
+                    Hey there! <AnimatedWave fontSize={'20px'} />
+                </h3>
                 <br />
                 <br />
-                Dive in, and let's have some fun!
+                <p className={'left-text'}>
+                    I'm Ellek, an (aspiring) professional poker player who loves
+                    classic rock, hypoallergenic doggos, David Lynch movies, and
+                    software. I graduated in 2020 from UC Berkeley with a Data
+                    Science degree and a{' '}
+                    <ExternalLink
+                        analyticsLabel={'whole lotta love'}
+                        href="https://www.youtube.com/watch?v=HQmmM_qwG4k"
+                    >
+                        whole lotta love
+                    </ExternalLink>{' '}
+                    for coding.
+                    <br />
+                    <br />
+                    I currently work on the Machine Learning Infrastructure team
+                    at Snap. Previous to this, I worked on the Apple Pay team at
+                    PayPal. At the crossroads of coding and creativity, that's
+                    where you'll find me. Whether at PayPal, Snap, or on a
+                    personal project, I aim to create digital magic.
+                    <br />
+                    <br />
+                    Dive in, and let's have some fun!
+                </p>
             </div>
         </ContentSection>
     )

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { VerticalTimeline } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import './timeline.css'
 import { TimelineEvent } from './timeline-event/TimelineEvent'
+import snap from '../../images/icons/logos/snap.svg'
 import paypal from '../../images/icons/logos/paypal.svg'
 import edify from '../../images/icons/logos/edify.svg'
 import { TimelineEventPaneContainer } from './timeline-event/TimelineEventPaneContainer'
@@ -20,13 +21,21 @@ import sql from '../../images/icons/logos/sql.svg'
 import aws from '../../images/icons/logos/aws.svg'
 import azure from '../../images/icons/logos/azure.svg'
 import gcp from '../../images/icons/logos/gcp.svg'
+import kubernetes from '../../images/icons/logos/kubernetes.svg'
 
-function ExperienceIcon({ image }: { image: any }) {
+function ExperienceIcon({
+    image,
+    style = {},
+}: {
+    image: any
+    style?: CSSProperties
+}) {
     return (
         <img
             style={{
                 width: '75%',
                 height: 'auto',
+                ...style,
                 // top: '50%',
                 // transform: 'translateY(-50%)',
                 // maxWidth: '100%',
@@ -42,20 +51,56 @@ function Timeline() {
     return (
         <VerticalTimeline>
             <TimelineEvent
+                position={'Senior Software Engineer'}
+                positionSubtitle={'ML Infrastructure'}
+                company={'Snap Inc.'}
+                location={'San Francisco, CA'}
+                date={'July 2024 - Present'}
+                icon={
+                    <ExperienceIcon
+                        style={{
+                            width: '100%',
+                        }}
+                        image={snap}
+                    />
+                }
+            >
+                <div className={'timeline-summary'}>
+                    In July 2024, I joined the Machine Learning Infrastructure
+                    team at Snap as a Senior Backend Software Engineer. On this
+                    team, I work on the infrastructure that powers Snap's
+                    machine learning models, specifically, in content
+                    understanding and feature store.
+                </div>
+                <TimelineEventPaneContainer>
+                    <TimelineEventPane title={'Tech'}>
+                        <TimelineEventPaneItem name={'Java'} icon={java} />
+                        <TimelineEventPaneItem name={'Python'} icon={python} />
+                        <TimelineEventPaneItem name={'SQL'} icon={sql} />
+                        <TimelineEventPaneItem name={'GCP'} icon={gcp} />
+                        <TimelineEventPaneItem name={'AWS'} icon={aws} />
+                        <TimelineEventPaneItem
+                            name={'Kubernetes'}
+                            icon={kubernetes}
+                        />
+                    </TimelineEventPane>
+                </TimelineEventPaneContainer>
+            </TimelineEvent>
+            <TimelineEvent
                 position={'Software Engineer'}
                 positionSubtitle={'Apple Pay'}
                 company={'PayPal'}
                 location={'San Francisco, CA'}
-                date={'January 2022 - Present'}
+                date={'January 2022 - June 2024'}
                 icon={<ExperienceIcon image={paypal} />}
             >
                 <div className={'timeline-summary'}>
-                    Since January 2022, I have had the incredible opportunity to
-                    work on the Apple Pay team at PayPal. On this team, I
-                    built/maintained backend REST and GraphQL APIs to facilitate
-                    Apple Pay transactions at scale and built a highly
-                    functional full-stack test tool from scratch to simulate
-                    Apple Pay integrations.
+                    From January 2022 to June 2024, I had the incredible
+                    opportunity to work on the Apple Pay team at PayPal. On this
+                    team, I built/maintained backend REST and GraphQL APIs to
+                    facilitate Apple Pay transactions at scale and built a
+                    highly functional full-stack test tool from scratch to
+                    simulate Apple Pay integrations.
                 </div>
                 <TimelineEventPaneContainer>
                     <TimelineEventPane title={'Tech'}>

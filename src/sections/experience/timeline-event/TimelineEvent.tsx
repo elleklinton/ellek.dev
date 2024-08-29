@@ -33,6 +33,7 @@ export function TimelineEvent({
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                overflow: 'hidden',
             }}
             icon={icon ?? <i className="fab fa-react"></i>}
         >

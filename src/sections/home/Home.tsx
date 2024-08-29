@@ -16,7 +16,6 @@ const Home = () => {
                     <h1>
                         Hi, I'm Ellek Linton! <AnimatedWave fontSize={'40px'} />
                     </h1>
-                    {/*<h3>Creating Innovative Products with Passion & Precision</h3>*/}
                     <h3
                         style={{
                             marginTop: 0,
