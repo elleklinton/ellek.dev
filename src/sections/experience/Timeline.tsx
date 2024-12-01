@@ -55,7 +55,7 @@ function Timeline() {
                 positionSubtitle={'ML Infrastructure'}
                 company={'Snap Inc.'}
                 location={'San Francisco, CA'}
-                date={'July 2024 - Present'}
+                date={'July 2024 - November 2024'}
                 icon={
                     <ExperienceIcon
                         style={{
@@ -70,7 +70,8 @@ function Timeline() {
                     team at Snap as a Senior Backend Software Engineer. On this
                     team, I work on the infrastructure that powers Snap's
                     machine learning models, specifically, in content
-                    understanding and feature store.
+                    understanding and feature store, serving tens of millions of
+                    requests per second.
                 </div>
                 <TimelineEventPaneContainer>
                     <TimelineEventPane title={'Tech'}>
